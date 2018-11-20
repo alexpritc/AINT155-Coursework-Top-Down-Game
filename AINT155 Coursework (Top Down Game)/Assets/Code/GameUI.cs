@@ -4,18 +4,18 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     public Slider healthBar;
-    public Text scoreText;
-    public int playerScore = 0;
+    public Text levelText;
+    public int playerLevel = 1;
 
     private void OnEnable()
     {
         PlayerMovement.OnUpdateHealth += UpdateHealthBar;
-        //AddScore.OnSendScore += UpdateScore;
+        PlayerMovement.OnSendLevel += UpdateLevel;
     }
     private void OnDisable()
     {
         PlayerMovement.OnUpdateHealth -= UpdateHealthBar;
-        //AddScore.OnSendScore -= UpdateScore;
+        PlayerMovement.OnSendLevel -= UpdateLevel;
     }
 
 
@@ -24,10 +24,10 @@ public class GameUI : MonoBehaviour
         healthBar.value = health;
     }
 
-    //private void UpdateScore(int theScore)
-    //{
-    //    playerScore += theScore;
-    //    scoreText.text = "SCORE: " + playerScore.ToString();
-    //}
+    private void UpdateLevel(int theLevel)
+    {
+        playerLevel += theLevel;
+        levelText.text = "LEVEL: " + playerLevel.ToString();
+    }
 }
 

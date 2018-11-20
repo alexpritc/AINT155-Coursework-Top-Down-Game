@@ -6,9 +6,13 @@ public class PlayerMovement : MonoBehaviour
     public delegate void UpdateHealth(int newHealth);
     public static event UpdateHealth OnUpdateHealth;
 
+    public delegate void SendLevel(int theLevel);
+    public static event SendLevel OnSendLevel;
+
     // Declaring Variables.
     public float speed;
     public bool isSpinning = false;
+    public int level = 1;
 
     Rigidbody2D playerRigidBody;
     Animator playerAnimator;
@@ -17,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     // Called at the beginning.
     void Start()
     {
+        if (OnSendLevel != null)
+        {
+            OnSendLevel(level);
+        }
+
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
@@ -99,7 +108,10 @@ public class PlayerMovement : MonoBehaviour
         // If the Player collides with the stairs, the timer resets.
         if (other.tag == "Stairs")
         {
-            
+            if (OnSendLevel != null)
+            {
+                OnSendLevel(level);
+            }
         }
     }
 

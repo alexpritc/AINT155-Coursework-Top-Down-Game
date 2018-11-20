@@ -19,12 +19,12 @@ Unity 2D Zombie Shooter
 
 # Instructions for usage
 
-Put any specific instructions to run the game here.
+1. Download the repositry.
+
+2. Double click the .exe file in Prototype Builds
+
+3. Run the game and enjoy!
 
 # References
-Put links to assets you have used, but not created yourself, including:
-● Art
-● Sound
-● Code libraries
-● Other things
-Do not include the assets you have downloaded from the DLE to create the project
+
+All art, sound, code libraries etc were created by Alexander Pritchard.

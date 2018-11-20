@@ -19,11 +19,11 @@ Unity 2D Zombie Shooter
 
 # Instructions for usage
 
-1. Download the repositry.
+1. Double click the folder "Prototype Build"
 
-2. Double click the .exe file in Prototype Builds
+2. Click on and download the .exe file inside ("Prototype-Build.exe")
 
-3. Run the game and enjoy!
+3. Run said executable file and enjoy!
 
 # References
 

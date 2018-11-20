@@ -6,12 +6,11 @@ public class PlayerMovement : MonoBehaviour
 
     // Declaring Variables.
     public float speed;
-
     public bool isSpinning = false;
 
     Rigidbody2D playerRigidBody;
-
     Animator playerAnimator;
+
 
     // Called at the beginning.
     void Start()
@@ -21,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerAnimator.SetBool("isSpinningLeft", false);
         playerAnimator.SetBool("isSpinningRight", false);
+
     }
 
     // Called every frame.
@@ -91,6 +91,13 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "Grate")
         {
             Invoke("StopSpinning", 0.1f);
+        }
+
+
+        // If the Player collides with the stairs, the timer resets.
+        if (other.tag == "Stairs")
+        {
+            
         }
     }
 

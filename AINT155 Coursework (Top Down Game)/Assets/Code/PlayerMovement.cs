@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public delegate void UpdateHealth(int newHealth);
+    public static event UpdateHealth OnUpdateHealth;
 
     // Declaring Variables.
     public float speed;
@@ -137,4 +139,13 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("isSpinningLeft", false);
         playerAnimator.SetBool("isSpinningRight", false);
     }
+
+    public void SendHealthData(int health)
+    {
+        if (OnUpdateHealth != null)
+        {
+            OnUpdateHealth(health);
+        }
+    }
+
 }

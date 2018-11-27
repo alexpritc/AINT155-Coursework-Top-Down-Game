@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4734794081706020}
   - component: {fileID: 20059130478526028}
   - component: {fileID: 81133013865936274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -37,11 +37,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4750454759982870}
   - component: {fileID: 58887969444625294}
-  - component: {fileID: 50903085317809334}
   - component: {fileID: 114378804940198484}
   - component: {fileID: 212515920636393990}
   - component: {fileID: 95723075018301802}
-  m_Layer: 0
+  - component: {fileID: 114141328182413276}
+  - component: {fileID: 50120242444373880}
+  - component: {fileID: 114641051236980058}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -68,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1899559574175110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.125, y: -0.297, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4734794081706020}
@@ -111,7 +113,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!50 &50903085317809334
+--- !u!50 &50120242444373880
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -122,7 +124,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.10865503
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -143,9 +145,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006444171, y: 0}
   serializedVersion: 2
-  m_Radius: 0.11508699
+  m_Radius: 0.18597303
 --- !u!81 &81133013865936274
 AudioListener:
   m_ObjectHideFlags: 1
@@ -171,6 +173,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114141328182413276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899559574175110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1201bd74cd7507646b2f1ef61210f380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114641051236980058}
+        m_MethodName: SceneLoader
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114378804940198484}
+        m_MethodName: SendHealthData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114378804940198484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,6 +230,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   isSpinning: 0
+  level: 1
+--- !u!114 &114641051236980058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899559574175110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693cee0a74e832b4eb918811ed53b2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MainMenu
 --- !u!212 &212515920636393990
 SpriteRenderer:
   m_ObjectHideFlags: 1

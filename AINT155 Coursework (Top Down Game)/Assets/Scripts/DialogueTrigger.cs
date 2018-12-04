@@ -10,7 +10,8 @@ public class DialogueTrigger : MonoBehaviour {
 
     public GameObject stairsToNextLevel;
 
-    public string sceneName, currentDialogue;
+    public string sceneName;
+    string currentDialogue;
 
     public float timer = 0f;
 
@@ -55,7 +56,7 @@ public class DialogueTrigger : MonoBehaviour {
                 dialogue.sentences[0] = "This is good. Keep going.";
                 dialogue.sentences[1] = "Excellent.";
 
-                Invoke("TriggerDialogue", 1f);
+                Invoke("TriggerDialogue", 2f);
 
                 currentDialogue = "Next Level";
                 hasLevel1Trigger2BeenCalled = true;
@@ -66,7 +67,6 @@ public class DialogueTrigger : MonoBehaviour {
             // needs to go to the next Level.
             if (timer >= 15f && currentDialogue == "Next Level" && hasLevel1Trigger2BeenCalled == true)
             {
-                stairsToNextLevel.SetActive(true);
 
                 dialogue.sentences[0] = "Well done, Tim. Now, I think we should talk more.";
                 dialogue.sentences[1] = "Walk into the stairs to explore deeper.";
@@ -75,6 +75,11 @@ public class DialogueTrigger : MonoBehaviour {
 
                 currentDialogue = "End Of Level";
                 hasLevel1Trigger3BeenCalled = true;
+
+                if (hasLevel1Trigger3BeenCalled == true)
+                {
+                    stairsToNextLevel.SetActive(true);
+                }
 
             }
         }

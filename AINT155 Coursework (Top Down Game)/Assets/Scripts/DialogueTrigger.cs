@@ -10,7 +10,7 @@ public class DialogueTrigger : MonoBehaviour {
 
     public GameObject stairsToNextLevel;
 
-    public string sceneName;
+    public string sceneName, currentDialogue;
 
     public float timer = 0f;
 
@@ -42,23 +42,34 @@ public class DialogueTrigger : MonoBehaviour {
             {
                 TriggerDialogue();
                 level1HasBeenCalled = true;
+
+                currentDialogue = "WASD";
             }
 
-            if (timer >= 5f)
+            // N/A says something whilst the Player is moving.
+            if (timer >= 5f && currentDialogue == "WASD")
             {
-                dialogue.sentences[0] = "This is good. Keep going";
-                dialogue.sentences[1] = "test";
-                // N/A says something whilst the Player is moving.
+                dialogue.sentences[0] = "This is good. Keep going.";
+                dialogue.sentences[1] = "Excellent.";
+                
                 TriggerDialogue();
 
+                currentDialogue = "Next Level";
+
             }
 
-            if (timer >= 10f)
+            // N/A says something to indicate the player
+            // needs to go to the next Level.
+            if (timer >= 15f && currentDialogue == "Next Level")
             {
-                // N/A says something to indicate the player
-                // needs to go to the next Level.
+
+                dialogue.sentences[0] = "Well done, Tim. Now, I think we should talk more.";
+                dialogue.sentences[1] = "Walk into the stairs to explore deeper.";
+
                 TriggerDialogue();
                 stairsToNextLevel.SetActive(true);
+
+                currentDialogue = "End Of Level";
 
             }
         }

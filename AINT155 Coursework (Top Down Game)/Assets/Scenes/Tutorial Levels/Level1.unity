@@ -146,12 +146,9 @@ MonoBehaviour:
     - Hello Tim. Let's start with something simple.
     - Why don't you try exploring with the W, A, S, D keys?
   stairsToNextLevel: {fileID: 1936471094}
-  triggerOne: {fileID: 145856688}
-  triggerTwo: {fileID: 604191997}
-  triggerThree: {fileID: 1234939029}
   sceneName: Level1
+  currentDialogue: 
   timer: 0
-  level1HasBeenCalled: 0
 --- !u!4 &145856690
 Transform:
   m_ObjectHideFlags: 0
@@ -517,57 +514,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1993924688}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &604191997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 604191999}
-  - component: {fileID: 604191998}
-  m_Layer: 0
-  m_Name: Dialogue Trigger (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &604191998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 604191997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55f8ba3ebefd964a9ab165da4d75f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: N/A
-    sentences:
-    - Yes, that's it. Keep going.
-  stairsToNextLevel: {fileID: 1936471094}
-  triggerOne: {fileID: 145856688}
-  triggerTwo: {fileID: 604191997}
-  triggerThree: {fileID: 1234939029}
-  sceneName: Level1
-  timer: 0
-  level1HasBeenCalled: 0
---- !u!4 &604191999
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 604191997}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &607858063
 Prefab:
@@ -6997,58 +6943,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1767303172}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &1234939029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1234939031}
-  - component: {fileID: 1234939030}
-  m_Layer: 0
-  m_Name: Dialogue Trigger (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1234939030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234939029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55f8ba3ebefd964a9ab165da4d75f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: N/A
-    sentences:
-    - Perfect.
-    - I think it's time we talked more. Walk down the stairs to explore deeper.
-  stairsToNextLevel: {fileID: 1936471094}
-  triggerOne: {fileID: 145856688}
-  triggerTwo: {fileID: 604191997}
-  triggerThree: {fileID: 1234939029}
-  sceneName: Level1
-  timer: 0
-  level1HasBeenCalled: 0
---- !u!4 &1234939031
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234939029}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270555683
 GameObject:
   m_ObjectHideFlags: 0

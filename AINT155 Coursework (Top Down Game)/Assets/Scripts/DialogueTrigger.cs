@@ -14,7 +14,9 @@ public class DialogueTrigger : MonoBehaviour {
 
     public float timer = 0f;
 
-    bool level1HasBeenCalled = false;
+    bool hasLevel1Trigger1BeenCalled = false;
+    bool hasLevel1Trigger2BeenCalled = false;
+    bool hasLevel1Trigger3BeenCalled = false;
 
 
     // Called once at initialisation.
@@ -38,38 +40,41 @@ public class DialogueTrigger : MonoBehaviour {
     {
         if (sceneName == "Level1")
         {
-            if (level1HasBeenCalled == false)
+            if (hasLevel1Trigger1BeenCalled == false)
             {
-                TriggerDialogue();
-                level1HasBeenCalled = true;
+                Invoke("TriggerDialogue", 1f);
 
                 currentDialogue = "WASD";
+                hasLevel1Trigger1BeenCalled = true;
+
             }
 
             // N/A says something whilst the Player is moving.
-            if (timer >= 5f && currentDialogue == "WASD")
+            if (timer >= 5f && currentDialogue == "WASD" && hasLevel1Trigger1BeenCalled == true)
             {
                 dialogue.sentences[0] = "This is good. Keep going.";
                 dialogue.sentences[1] = "Excellent.";
-                
-                TriggerDialogue();
+
+                Invoke("TriggerDialogue", 1f);
 
                 currentDialogue = "Next Level";
+                hasLevel1Trigger2BeenCalled = true;
 
             }
 
             // N/A says something to indicate the player
             // needs to go to the next Level.
-            if (timer >= 15f && currentDialogue == "Next Level")
+            if (timer >= 15f && currentDialogue == "Next Level" && hasLevel1Trigger2BeenCalled == true)
             {
+                stairsToNextLevel.SetActive(true);
 
                 dialogue.sentences[0] = "Well done, Tim. Now, I think we should talk more.";
                 dialogue.sentences[1] = "Walk into the stairs to explore deeper.";
 
-                TriggerDialogue();
-                stairsToNextLevel.SetActive(true);
+                Invoke("TriggerDialogue", 1f);
 
                 currentDialogue = "End Of Level";
+                hasLevel1Trigger3BeenCalled = true;
 
             }
         }

@@ -9,6 +9,7 @@ TagManager:
   - MazePanelLeft
   - MazePanelRight
   - Grate
+  - Obstacles
   layers:
   - Default
   - TransparentFX

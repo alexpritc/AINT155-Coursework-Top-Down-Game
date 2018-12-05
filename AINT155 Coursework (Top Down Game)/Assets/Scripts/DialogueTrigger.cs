@@ -121,6 +121,8 @@ public class DialogueTrigger : MonoBehaviour {
         {
             TriggerDialogue();
             hasLevel1AndAHalfTrigger1BeenCalled = true;
+
+            timer = 0f;
         }
 
         if (timer >= 5f && hasLevel1AndAHalfTrigger1BeenCalled == true &&

@@ -22,6 +22,12 @@ public class DialogueTrigger : MonoBehaviour {
 
     // Level 1.5 triggers.
     bool hasLevel1AndAHalfTrigger1BeenCalled = false;
+    bool hasLevel1AndAHalfTrigger2BeenCalled = false;
+    bool hasLevel1AndAHalfTrigger3BeenCalled = false;
+    bool hasLevel1AndAHalfTrigger4BeenCalled = false;
+
+    // Level 2 triggers.
+    bool hasLevel2Trigger1BeenCalled = false;
 
 
     // Called once at initialisation.
@@ -36,7 +42,6 @@ public class DialogueTrigger : MonoBehaviour {
     // Called once every frame.
     void Update()
     {
-
         DialogueSequence();
     
         timer += Time.fixedDeltaTime;
@@ -56,9 +61,15 @@ public class DialogueTrigger : MonoBehaviour {
             Level1AndAHalf();
         }
 
+        if (sceneName == "Level2")
+        {
+            Level2();
+        }
+
     }
 
-    // Level 1.
+    // Methods for calling individual levels,
+    // which are in order.
     public void Level1()
     {
         if (hasLevel1Trigger1BeenCalled == false)
@@ -104,13 +115,31 @@ public class DialogueTrigger : MonoBehaviour {
         }
     }
 
-    // Level 1.5.
     public void Level1AndAHalf()
     {
         if (hasLevel1AndAHalfTrigger1BeenCalled == false)
         {
-            Invoke("TriggerDialogue", 0.5f);
+            TriggerDialogue();
             hasLevel1AndAHalfTrigger1BeenCalled = true;
+        }
+
+        if (timer >= 5f && hasLevel1AndAHalfTrigger1BeenCalled == true &&
+            hasLevel1AndAHalfTrigger2BeenCalled == false)
+        {
+            dialogue.sentences[0] = "Also, there are obstacles that block your path.";
+            dialogue.sentences[1] = "Find your way to the next level.";
+
+            Invoke("TriggerDialogue", 0.5f);
+            hasLevel1AndAHalfTrigger2BeenCalled = true;
+        }
+    }
+
+    public void Level2()
+    {
+        if (hasLevel2Trigger1BeenCalled == false)
+        {
+            TriggerDialogue();
+            hasLevel2Trigger1BeenCalled = true;
         }
     }
 
@@ -120,17 +149,28 @@ public class DialogueTrigger : MonoBehaviour {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
+    // Dialogue changes depending on collisions.
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == ("Player"))
         {
-            if (sceneName == "Level1.5")
+            // Level 1.5.
+            if (sceneName == "Level1.5" && hasLevel1AndAHalfTrigger1BeenCalled == true 
+                && hasLevel1AndAHalfTrigger3BeenCalled == false)
             {
                 dialogue.sentences[0] = "Well that wasn't very smart.";
+                dialogue.sentences[1] = "Pay more attention, Tim.";
 
-                if (sceneName == "Level1.5" & hasLevel1AndAHalfTrigger1BeenCalled == true)
+                hasLevel1AndAHalfTrigger3BeenCalled = true;
+
+
+                if (sceneName == "Level1.5" & hasLevel1AndAHalfTrigger2BeenCalled == true &&
+                    hasLevel1AndAHalfTrigger4BeenCalled == false)
                 {
                     dialogue.sentences[0] = "What did I just say?";
+                    dialogue.sentences[1] = "Pay more attention, Tim.";
+
+                    hasLevel1AndAHalfTrigger4BeenCalled = true;
                 }
 
                 Invoke("TriggerDialogue", 0.5f);

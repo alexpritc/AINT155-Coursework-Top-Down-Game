@@ -37,6 +37,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence()
     {
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -46,6 +47,10 @@ public class DialogueManager : MonoBehaviour {
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        if (sentence == "")
+        {
+            EndDialogue();   
+        }
     }
 
 

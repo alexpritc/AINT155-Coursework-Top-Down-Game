@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour {
     public Dialogue dialogue;
 
     public GameObject stairsToNextLevel;
+    public GameObject fakeStairs;
 
     public string sceneName;
     string currentDialogue;
@@ -32,6 +33,14 @@ public class DialogueTrigger : MonoBehaviour {
     bool hasPlayerNotOnMazePanelDialogueBeenCalled = false;
     bool hasPlayerNotOnMazePanelDialogueCompleted = false;
 
+    // Level 3 triggers.
+    bool hasInitialLevel3DialogueBeenCalled = false;
+    bool hasPlayerSteppedOnMazePanel = false;
+
+    // Level 4 triggers.
+    bool hasInitialLevel4DialogueBeenCalled = false;
+    bool hasNASlowClapped = false;
+
 
 
     // Called once at initialisation.
@@ -41,6 +50,13 @@ public class DialogueTrigger : MonoBehaviour {
         {
             stairsToNextLevel.SetActive(false);
         }
+
+        if (sceneName == "Level3")
+        {
+            fakeStairs.SetActive(true);
+            stairsToNextLevel.SetActive(false);
+        }
+
     }
 
     // Called once every frame.
@@ -80,6 +96,15 @@ public class DialogueTrigger : MonoBehaviour {
             Level2();
         }
 
+        if (sceneName == "Level3")
+        {
+            Level3();
+        }
+
+        if (sceneName == "Level4")
+        {
+            Level4();
+        }
     }
 
 
@@ -186,6 +211,40 @@ public class DialogueTrigger : MonoBehaviour {
 
     }
 
+    public void Level3()
+    {
+        // Initial level dialogue.
+        if (hasInitialLevel3DialogueBeenCalled == false)
+        {
+            hasInitialLevel3DialogueBeenCalled = true;
+            TriggerDialogue();
+        }
+
+        // If the player doesn't step on the maze panel.
+        if (hasInitialLevel3DialogueBeenCalled == true && hasPlayerSteppedOnMazePanel == false && timer >= 10f)
+        {
+            dialogue.sentences[0] = "Step on that maze panel, Tim.";
+            dialogue.sentences[1] = "When you do, I'll activate the stairs to the next level";
+            dialogue.sentences[2] = "...and it'll propel you down them, ~trust me~.";
+
+            TriggerDialogue();
+
+            timer = 0f;
+
+            stairsToNextLevel.SetActive(true);
+            hasPlayerSteppedOnMazePanel = true;
+        }
+    }
+
+    public void Level4()
+    {
+        // Initial level dialogue.
+        if (hasInitialLevel4DialogueBeenCalled == false)
+        {
+            hasInitialLevel4DialogueBeenCalled = true;
+            TriggerDialogue();
+        }
+    }
 
 
     // Dialogue changes depending on collisions.
@@ -236,6 +295,36 @@ public class DialogueTrigger : MonoBehaviour {
                 hasSteppedOnMazePanel = true;
             }
             
+            // Level 3.
+            if (sceneName == "Level3" && hasInitialLevel3DialogueBeenCalled == true)
+            {
+                hasPlayerSteppedOnMazePanel = true;
+                stairsToNextLevel.SetActive(true);
+            }
+
+            // Level 4.
+            if (sceneName == "Level4" && hasInitialLevel4DialogueBeenCalled == true && hasNASlowClapped == false)
+            {
+                dialogue.sentences[0] = "Clap... Clap... Clap.";
+                dialogue.sentences[1] = "";
+                dialogue.sentences[2] = "";
+
+                TriggerDialogue();
+
+                hasNASlowClapped = true;
+            }
+            if (sceneName == "Level4" && hasInitialLevel4DialogueBeenCalled == true && hasNASlowClapped == true
+                && timer >= 10f)
+            {
+                dialogue.sentences[0] = "...";
+                dialogue.sentences[1] = "";
+                dialogue.sentences[2] = "";
+
+                TriggerDialogue();
+
+                hasNASlowClapped = false;
+            }
+
         }
        
     }

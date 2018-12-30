@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour {
@@ -10,6 +8,8 @@ public class DialogueTrigger : MonoBehaviour {
 
     public GameObject stairsToNextLevel;
     public GameObject fakeStairs;
+    public GameObject grate;
+    public GameObject fakeGrate;
 
     public string sceneName;
     string currentDialogue;
@@ -29,17 +29,21 @@ public class DialogueTrigger : MonoBehaviour {
 
     // Level 2 triggers.
     bool hasInitialLevel2DialogueBeenCalled = false;
-    bool hasSteppedOnMazePanel = false;
+    bool hasSteppedOnMazePanelLevel2 = false;
     bool hasPlayerNotOnMazePanelDialogueBeenCalled = false;
     bool hasPlayerNotOnMazePanelDialogueCompleted = false;
 
     // Level 3 triggers.
     bool hasInitialLevel3DialogueBeenCalled = false;
-    bool hasPlayerSteppedOnMazePanel = false;
+    bool hasPlayerSteppedOnMazePanelLevel3 = false;
 
     // Level 4 triggers.
     bool hasInitialLevel4DialogueBeenCalled = false;
     bool hasNASlowClapped = false;
+
+    // Level 5 triggers.
+    bool hasInitialLevel5DialogueBeenCalled = false;
+    bool hasPlayerSteppedOnMazePanelLevel5 = false;
 
 
 
@@ -55,6 +59,16 @@ public class DialogueTrigger : MonoBehaviour {
         {
             fakeStairs.SetActive(true);
             stairsToNextLevel.SetActive(false);
+        }
+
+        if (sceneName == "Level5")
+        {
+            fakeStairs.SetActive(true);
+            stairsToNextLevel.SetActive(false);
+
+            fakeGrate.SetActive(true);
+            grate.SetActive(false);
+
         }
 
     }
@@ -104,6 +118,11 @@ public class DialogueTrigger : MonoBehaviour {
         if (sceneName == "Level4")
         {
             Level4();
+        }
+        
+        if (sceneName == "Level5")
+        {
+            Level5();
         }
     }
 
@@ -190,7 +209,7 @@ public class DialogueTrigger : MonoBehaviour {
         }
 
         // If the player doesn't trust NA.
-        if (hasSteppedOnMazePanel == false && hasPlayerNotOnMazePanelDialogueBeenCalled == false && timer >= 10f)
+        if (hasSteppedOnMazePanelLevel2 == false && hasPlayerNotOnMazePanelDialogueBeenCalled == false && timer >= 10f)
         {
 
             hasPlayerNotOnMazePanelDialogueBeenCalled = true;
@@ -204,7 +223,7 @@ public class DialogueTrigger : MonoBehaviour {
         }
 
         // Calls the next level.
-        if (hasSteppedOnMazePanel == true && timer >= 10f || hasPlayerNotOnMazePanelDialogueCompleted == true && timer >= 15f)
+        if (hasSteppedOnMazePanelLevel2 == true && timer >= 10f || hasPlayerNotOnMazePanelDialogueCompleted == true && timer >= 15f)
         {
             SceneManager.LoadScene("Level3");
         }
@@ -221,7 +240,7 @@ public class DialogueTrigger : MonoBehaviour {
         }
 
         // If the player doesn't step on the maze panel.
-        if (hasInitialLevel3DialogueBeenCalled == true && hasPlayerSteppedOnMazePanel == false && timer >= 10f)
+        if (hasInitialLevel3DialogueBeenCalled == true && hasPlayerSteppedOnMazePanelLevel3 == false && timer >= 10f)
         {
             dialogue.sentences[0] = "Step on that maze panel, Tim.";
             dialogue.sentences[1] = "When you do, I'll activate the stairs to the next level";
@@ -231,8 +250,7 @@ public class DialogueTrigger : MonoBehaviour {
 
             timer = 0f;
 
-            stairsToNextLevel.SetActive(true);
-            hasPlayerSteppedOnMazePanel = true;
+            hasPlayerSteppedOnMazePanelLevel3 = true;
         }
     }
 
@@ -245,6 +263,17 @@ public class DialogueTrigger : MonoBehaviour {
             TriggerDialogue();
         }
     }
+
+    public void Level5()
+    {
+        // Initial level dialogue.
+        if (hasInitialLevel5DialogueBeenCalled == false)
+        {
+            hasInitialLevel5DialogueBeenCalled = true;
+            TriggerDialogue();
+        }
+    }
+
 
 
     // Dialogue changes depending on collisions.
@@ -277,7 +306,7 @@ public class DialogueTrigger : MonoBehaviour {
 
             // Level 2.
             if (sceneName == "Level2" && hasInitialLevel2DialogueBeenCalled == true
-                && timer <= 15f && hasSteppedOnMazePanel == false)
+                && timer <= 15f && hasSteppedOnMazePanelLevel2 == false)
             {
                 // If the player does stand on the Maze Panels.
                 dialogue.sentences[0] = "Looks like we're going around in circles.";
@@ -292,13 +321,13 @@ public class DialogueTrigger : MonoBehaviour {
 
                 Invoke("TriggerDialogue", 5f);
 
-                hasSteppedOnMazePanel = true;
+                hasSteppedOnMazePanelLevel2 = true;
             }
             
             // Level 3.
             if (sceneName == "Level3" && hasInitialLevel3DialogueBeenCalled == true)
             {
-                hasPlayerSteppedOnMazePanel = true;
+                hasPlayerSteppedOnMazePanelLevel3 = true;
                 stairsToNextLevel.SetActive(true);
             }
 
@@ -323,6 +352,14 @@ public class DialogueTrigger : MonoBehaviour {
                 TriggerDialogue();
 
                 hasNASlowClapped = false;
+            }
+
+            // Level 5.
+            if (sceneName == "Level5" && hasPlayerSteppedOnMazePanelLevel5 == false)
+            {
+                hasPlayerSteppedOnMazePanelLevel5 = true;
+                grate.SetActive(true);
+                stairsToNextLevel.SetActive(true);
             }
 
         }

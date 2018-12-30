@@ -45,6 +45,9 @@ public class DialogueTrigger : MonoBehaviour {
     bool hasInitialLevel5DialogueBeenCalled = false;
     bool hasPlayerSteppedOnMazePanelLevel5 = false;
 
+    // Level 6 triggers.
+    bool hasInitialLevel6DialogueBeenCalled = false;
+
 
 
     // Called once at initialisation.
@@ -123,6 +126,11 @@ public class DialogueTrigger : MonoBehaviour {
         if (sceneName == "Level5")
         {
             Level5();
+        }
+
+        if (sceneName == "Level6")
+        {
+            Level6();
         }
     }
 
@@ -270,6 +278,16 @@ public class DialogueTrigger : MonoBehaviour {
         if (hasInitialLevel5DialogueBeenCalled == false)
         {
             hasInitialLevel5DialogueBeenCalled = true;
+            TriggerDialogue();
+        }
+    }
+
+    public void Level6()
+    {
+        // Initial level dialogue.
+        if (hasInitialLevel6DialogueBeenCalled == false)
+        {
+            hasInitialLevel6DialogueBeenCalled = true;
             TriggerDialogue();
         }
     }

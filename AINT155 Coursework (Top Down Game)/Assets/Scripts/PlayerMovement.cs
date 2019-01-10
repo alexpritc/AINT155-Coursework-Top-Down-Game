@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRigidBody;
     Animator playerAnimator;
 
+    HealthSystem instance;
+
+
 
     // Called at the beginning.
     void Start()
@@ -45,13 +48,14 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+
+
     // When the player presses W the character will move in an upward 
     // direction. When the player presses S the character will move 
     // in an downward direction. When the player presses A the 
     // character will move in an leftward direction. When the 
     // player presses D the character will move in an rightward 
     // direction. 
-
     void Movement()
     {
         Vector3 position = transform.position;
@@ -76,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
             Debug.Assert(transform.position == position + (Vector3.right * speed * Time.deltaTime));
         }
     }
+
+
 
     // When Player collides with GameObjects with the following tags...
     void OnTriggerEnter2D(Collider2D other)
@@ -115,6 +121,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+
+
     // Creates movement when the player hits a Maze Panel.
     public void SpinningUp()
     {
@@ -151,6 +160,8 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("isSpinningLeft", false);
         playerAnimator.SetBool("isSpinningRight", false);
     }
+
+
 
     public void SendHealthData(int health)
     {

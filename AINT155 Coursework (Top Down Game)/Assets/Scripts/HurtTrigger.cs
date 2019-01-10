@@ -3,9 +3,9 @@
 public class HurtTrigger : MonoBehaviour
 {
 
-    public int damage;
+    public int damage = 1;
 
-    public float resetTime = 0.25f;
+    public float resetTime = 5f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

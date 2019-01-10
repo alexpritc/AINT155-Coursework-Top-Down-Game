@@ -7,7 +7,10 @@ public class OnDamagedEvent : UnityEvent<int> { }
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health = 10;
+    /// <summary>
+    /// Player health.
+    /// </summary>
+    public static int health = 100;
     public UnityEvent onDie;
     public OnDamagedEvent onDamaged;
 
@@ -15,6 +18,7 @@ public class HealthSystem : MonoBehaviour
     {
         health -= damage;
         onDamaged.Invoke(health);
+
         if (health < 1)
         {
             onDie.Invoke();

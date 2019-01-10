@@ -16,6 +16,9 @@ public class DialogueTrigger : MonoBehaviour {
 
     public float timer = 0f;
 
+    // Introduction triggers
+    bool hasInitialIntroductionDialogueBeenCalled = false;
+
     // Level 1 triggers.
     bool hasInitialLevel1DialogueBeenCalled = false;
     bool hasNASpokenWhilstPlayerMoves = false;
@@ -47,6 +50,9 @@ public class DialogueTrigger : MonoBehaviour {
 
     // Level 6 triggers.
     bool hasInitialLevel6DialogueBeenCalled = false;
+
+    // Level 7 triggers.
+    bool hasInitialLevel7DialogueBeenCalled = false;
 
 
 
@@ -98,6 +104,11 @@ public class DialogueTrigger : MonoBehaviour {
     // section of each level.
     public void DialogueSequence()
     {
+        if (sceneName == "Introduction")
+        {
+            Introduction();
+        }
+
         if (sceneName == "Level1")
         {
             Level1();
@@ -132,12 +143,28 @@ public class DialogueTrigger : MonoBehaviour {
         {
             Level6();
         }
+
+        if (sceneName == "Level7")
+        {
+            Level7();
+        }
     }
 
 
 
     // Methods for calling individual levels,
     // which are in order.
+    public void Introduction()
+    {
+        if (hasInitialIntroductionDialogueBeenCalled == false)
+        {
+            TriggerDialogue();
+
+            hasInitialIntroductionDialogueBeenCalled = true;
+
+        }
+    }
+
     public void Level1()
     {
         if (hasInitialLevel1DialogueBeenCalled == false)
@@ -292,6 +319,15 @@ public class DialogueTrigger : MonoBehaviour {
         }
     }
 
+    public void Level7()
+    {
+        // Initial level dialogue.
+        if (hasInitialLevel7DialogueBeenCalled == false)
+        {
+            hasInitialLevel7DialogueBeenCalled = true;
+            TriggerDialogue();
+        }
+    }
 
 
     // Dialogue changes depending on collisions.

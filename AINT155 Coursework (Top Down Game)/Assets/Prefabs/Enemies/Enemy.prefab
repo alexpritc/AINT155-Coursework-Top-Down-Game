@@ -37,9 +37,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4518829822314176}
   - component: {fileID: 212346184937546782}
-  - component: {fileID: 61227702455415704}
   - component: {fileID: 50240077091887354}
   - component: {fileID: 114123341739510222}
+  - component: {fileID: 114836609020228594}
+  - component: {fileID: 58500347282263148}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -67,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1589686630312350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 1.33, z: 0}
+  m_LocalPosition: {x: -0.13611662, y: 0.52441, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4221061541035260}
@@ -109,8 +110,8 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16144323
---- !u!61 &61227702455415704
-BoxCollider2D:
+--- !u!58 &58500347282263148
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -121,19 +122,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.009360209, y: 0.0010399818}
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
-  m_EdgeRadius: 0
+  m_Radius: 0.16207999
 --- !u!114 &114123341739510222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +151,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   resetTime: 0.25
+--- !u!114 &114836609020228594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589686630312350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a5a6ad69c7434296f2c1dc7a77c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  resetTime: 5
 --- !u!212 &212346184937546782
 SpriteRenderer:
   m_ObjectHideFlags: 1

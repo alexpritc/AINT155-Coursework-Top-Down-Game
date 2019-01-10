@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,6 +149,9 @@ MonoBehaviour:
     - You can track your progress during our sessions.
     - Simply look at the level counter in the top right corner of the screen.
   stairsToNextLevel: {fileID: 1936471094}
+  fakeStairs: {fileID: 0}
+  grate: {fileID: 0}
+  fakeGrate: {fileID: 0}
   sceneName: Level1.5
   timer: 0
 --- !u!4 &145856690
@@ -7053,6 +7056,11 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114641051236980058, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: sceneName
+      value: Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
   m_IsPrefabParent: 0
@@ -8863,6 +8871,7 @@ MonoBehaviour:
   healthBar: {fileID: 238464494}
   levelText: {fileID: 2066353069}
   playerLevel: 0
+  newHealth: 0
 --- !u!114 &2143595443 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114247022176737238, guid: e27c2b1a24c8f90469ea6d8fea6b36a4,

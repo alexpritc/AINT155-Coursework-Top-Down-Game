@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
@@ -68,6 +69,15 @@ public class DialogueManager : MonoBehaviour {
 	
 	void EndDialogue()
     {
+        if (SceneController.sendSceneName == "Introduction")
+        {
+            SceneManager.LoadScene("Introduction2");
+        }
+        if (SceneController.sendSceneName == "Introduction2")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         animator.SetBool("isOpen", false);
     }
 }

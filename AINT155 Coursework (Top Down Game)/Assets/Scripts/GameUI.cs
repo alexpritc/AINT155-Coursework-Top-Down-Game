@@ -16,6 +16,10 @@ public class GameUI : MonoBehaviour
         {
             healthBar.value = SceneController.saveHealth;
         }
+        if (SceneController.sendSceneName == "Level1")
+        {
+            healthBar.value = 100;
+        }
         
     }
 

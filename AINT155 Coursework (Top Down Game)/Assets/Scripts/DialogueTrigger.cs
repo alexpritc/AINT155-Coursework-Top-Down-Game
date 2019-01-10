@@ -104,7 +104,7 @@ public class DialogueTrigger : MonoBehaviour {
     // section of each level.
     public void DialogueSequence()
     {
-        if (sceneName == "Introduction")
+        if (sceneName == "Introduction" || sceneName == "Introduction2")
         {
             Introduction();
         }

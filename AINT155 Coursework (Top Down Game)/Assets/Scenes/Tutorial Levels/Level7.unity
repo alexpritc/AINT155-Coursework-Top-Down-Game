@@ -11728,12 +11728,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &882760747 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
-    type: 2}
-  m_PrefabInternal: {fileID: 882760746}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!224 &882760748 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224416001658526234, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
@@ -11770,7 +11764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1325526250}
-  levelText: {fileID: 882760747}
   playerLevel: 0
   newHealth: 0
 --- !u!114 &1036664883
@@ -13657,8 +13650,8 @@ MonoBehaviour:
     name: N/A
     sentences:
     - I feel like we're getting somewhere...
-    - Now you must learn that just because you can do something, doesn't mean you
-      should.
+    - Now you must learn that just because you can do something
+    - '...doesn''t mean you should.'
     - Do not attempt this puzzle under any circumstances.
   stairsToNextLevel: {fileID: 1058059388}
   fakeStairs: {fileID: 0}

@@ -359,11 +359,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4423344641298956, guid: 6092a144b9942234d98e75a3cd055774, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.21883583
+      value: -0.608
       objectReference: {fileID: 0}
     - target: {fileID: 4423344641298956, guid: 6092a144b9942234d98e75a3cd055774, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: -0.245
       objectReference: {fileID: 0}
     - target: {fileID: 4423344641298956, guid: 6092a144b9942234d98e75a3cd055774, type: 2}
       propertyPath: m_LocalPosition.z
@@ -401,11 +401,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4534345855091126, guid: 9ae7d3648863a854bb111b460afcdf18, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.248909
+      value: 1.388
       objectReference: {fileID: 0}
     - target: {fileID: 4534345855091126, guid: 9ae7d3648863a854bb111b460afcdf18, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.2196418
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 4534345855091126, guid: 9ae7d3648863a854bb111b460afcdf18, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7060,11 +7060,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4750454759982870, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.059
+      value: 0.394
       objectReference: {fileID: 0}
     - target: {fileID: 4750454759982870, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.726
       objectReference: {fileID: 0}
     - target: {fileID: 4750454759982870, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7112,11 +7112,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4964234236735808, guid: c65807bf5f2a19f48992c32594c40d47, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.389
       objectReference: {fileID: 0}
     - target: {fileID: 4964234236735808, guid: c65807bf5f2a19f48992c32594c40d47, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.22716668
+      value: -0.243
       objectReference: {fileID: 0}
     - target: {fileID: 4964234236735808, guid: c65807bf5f2a19f48992c32594c40d47, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7180,7 +7180,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099302329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1220002, y: 0.45999992, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0.657, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7356,6 +7356,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
+        type: 2}
+      propertyPath: m_Text
+      value: 'LEVEL: 3'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56, type: 2}
   m_IsPrefabParent: 0
@@ -7473,11 +7478,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4804684423236470, guid: b8ce3bcdd42277b4fbc7d35eca91d8b2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.25
+      value: -0.617
       objectReference: {fileID: 0}
     - target: {fileID: 4804684423236470, guid: b8ce3bcdd42277b4fbc7d35eca91d8b2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.22
+      value: 1.763
       objectReference: {fileID: 0}
     - target: {fileID: 4804684423236470, guid: b8ce3bcdd42277b4fbc7d35eca91d8b2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8568,12 +8573,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &2066353069 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
-    type: 2}
-  m_PrefabInternal: {fileID: 1556235022}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2107592413
 GameObject:
   m_ObjectHideFlags: 0
@@ -8683,7 +8682,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 238464494}
-  levelText: {fileID: 2066353069}
   playerLevel: 0
   newHealth: 0
 --- !u!114 &2143595443 stripped

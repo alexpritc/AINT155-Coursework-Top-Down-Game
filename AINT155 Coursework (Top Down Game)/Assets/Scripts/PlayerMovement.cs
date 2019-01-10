@@ -34,6 +34,13 @@ public class PlayerMovement : MonoBehaviour
 
         playerAnimator.SetBool("isSpinningLeft", false);
         playerAnimator.SetBool("isSpinningRight", false);
+        playerAnimator.SetBool("isSpinningDown", false);
+        playerAnimator.SetBool("isSpinningUp", false);
+
+        playerAnimator.SetBool("isSpinningFASTLeft", false);
+        playerAnimator.SetBool("isSpinningFASTRight", false);
+        playerAnimator.SetBool("isSpinningFASTDown", false);
+        playerAnimator.SetBool("isSpinningFASTUp", false);
 
     }
 
@@ -61,23 +68,50 @@ public class PlayerMovement : MonoBehaviour
         Vector3 position = transform.position;
         if (Input.GetKey(KeyCode.W))
         {
+            StopSpinning();
             transform.Translate(Vector3.up * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.up * speed * Time.deltaTime));
+            playerAnimator.SetBool("isSpinningUp", true);
+            playerAnimator.SetBool("isSpinningLeft", false);
+            playerAnimator.SetBool("isSpinningRight", false);
+            playerAnimator.SetBool("isSpinningDown", false);
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            StopSpinning();
             transform.Translate(Vector3.down * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.down * speed * Time.deltaTime));
+            playerAnimator.SetBool("isSpinningDown", true);
+            playerAnimator.SetBool("isSpinningLeft", false);
+            playerAnimator.SetBool("isSpinningRight", false);
+            playerAnimator.SetBool("isSpinningUp", false);
         }
         else if (Input.GetKey(KeyCode.A))
         {
+            StopSpinning();
             transform.Translate(Vector3.left * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.left * speed * Time.deltaTime));
+            playerAnimator.SetBool("isSpinningLeft", true);
+            playerAnimator.SetBool("isSpinningRight", false);
+            playerAnimator.SetBool("isSpinningUp", false);
+            playerAnimator.SetBool("isSpinningDown", false);
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            StopSpinning();
             transform.Translate(Vector3.right * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.right * speed * Time.deltaTime));
+            playerAnimator.SetBool("isSpinningRight", true);
+            playerAnimator.SetBool("isSpinningLeft", false);
+            playerAnimator.SetBool("isSpinningUp", false);
+            playerAnimator.SetBool("isSpinningDown", false);
+        }
+        else
+        {
+            playerAnimator.SetBool("isSpinningLeft", false);
+            playerAnimator.SetBool("isSpinningRight", false);
+            playerAnimator.SetBool("isSpinningUp", false);
+            playerAnimator.SetBool("isSpinningDown", false);
         }
     }
 
@@ -127,40 +161,75 @@ public class PlayerMovement : MonoBehaviour
     // Creates movement when the player hits a Maze Panel.
     public void SpinningUp()
     {
+        SetWeight();
         isSpinning = true;
+        playerAnimator.SetBool("isSpinningFASTLeft", false);
+        playerAnimator.SetBool("isSpinningFASTRight", false);
+        playerAnimator.SetBool("isSpinningFASTDown", false);
+        playerAnimator.SetBool("isSpinningFASTUp", true);
         playerRigidBody.velocity = (Vector3.up * speed);
+
     }
     public void SpinningDown()
     {
+        SetWeight();
         isSpinning = true;
+        playerAnimator.SetBool("isSpinningFASTLeft", false);
+        playerAnimator.SetBool("isSpinningFASTRight", false);
+        playerAnimator.SetBool("isSpinningFASTUp", false);
+        playerAnimator.SetBool("isSpinningFASTDown", true);
         playerRigidBody.velocity = (Vector3.down * speed);
+
     }
     public void SpinningLeft()
     {
+        SetWeight();
         isSpinning = true;
+        playerAnimator.SetBool("isSpinningFASTRight", false);
+        playerAnimator.SetBool("isSpinningFASTUp", false);
+        playerAnimator.SetBool("isSpinningFASTDown", false);
+        playerAnimator.SetBool("isSpinningFASTLeft", true);
         playerRigidBody.velocity = (Vector3.left * speed);
 
-        playerAnimator.SetBool("isSpinningLeft", true);
     }
     public void SpinningRight()
     {
+        SetWeight();
         isSpinning = true;
+        playerAnimator.SetBool("isSpinningFASTLeft", false);
+        playerAnimator.SetBool("isSpinningFASTUp", false);
+        playerAnimator.SetBool("isSpinningFASTDown", false);
+        playerAnimator.SetBool("isSpinningFASTRight", true);
         playerRigidBody.velocity = (Vector3.right * speed);
 
-        playerAnimator.SetBool("isSpinningRight", true);
     }
 
     // Stops the player's current velocity when they collide
     // with a Grate.
     public void StopSpinning()
     {
+        ResetWeight();
         isSpinning = false;
+
+        playerAnimator.SetBool("isSpinningFASTLeft", false);
+        playerAnimator.SetBool("isSpinningFASTRight", false);
+        playerAnimator.SetBool("isSpinningFASTUp", false);
+        playerAnimator.SetBool("isSpinningFASTDown", false);
         playerRigidBody.velocity = (Vector3.zero);
 
-        playerAnimator.SetBool("isSpinningLeft", false);
-        playerAnimator.SetBool("isSpinningRight", false);
     }
 
+    public void ResetWeight()
+    {
+        playerAnimator.SetLayerWeight(0, 1);
+        playerAnimator.SetLayerWeight(1, 0);
+    }
+
+    public void SetWeight()
+    {
+        playerAnimator.SetLayerWeight(0, 0);
+        playerAnimator.SetLayerWeight(1, 1);
+    }
 
 
     public void SendHealthData(int health)

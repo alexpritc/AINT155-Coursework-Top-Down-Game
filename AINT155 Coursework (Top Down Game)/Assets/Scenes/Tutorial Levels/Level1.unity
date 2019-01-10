@@ -7229,6 +7229,11 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 41984f66fe8a15d42963733d6cecfff1,
         type: 3}
+    - target: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
+        type: 2}
+      propertyPath: m_Text
+      value: 'LEVEL: 1'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56, type: 2}
   m_IsPrefabParent: 0
@@ -8485,12 +8490,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &2066353069 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
-    type: 2}
-  m_PrefabInternal: {fileID: 1556235022}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2107592413
 GameObject:
   m_ObjectHideFlags: 0
@@ -8600,7 +8599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 238464494}
-  levelText: {fileID: 2066353069}
   playerLevel: 0
   newHealth: 0
 --- !u!114 &2143595443 stripped

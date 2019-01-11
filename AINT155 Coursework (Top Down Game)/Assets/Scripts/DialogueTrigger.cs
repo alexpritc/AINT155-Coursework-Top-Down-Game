@@ -181,8 +181,8 @@ public class DialogueTrigger : MonoBehaviour {
         // N/A says something whilst the Player is moving.
         if (timer >= 5f && currentDialogue == "WASD" && hasInitialLevel1DialogueBeenCalled == true)
         {
-            dialogue.sentences[0] = "This is good. Keep going.";
-            dialogue.sentences[1] = "Excellent.";
+            dialogue.sentences[0] = "Excellent.";
+            dialogue.sentences[1] = "";
 
             Invoke("TriggerDialogue", 2f);
 

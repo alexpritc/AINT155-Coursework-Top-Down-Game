@@ -7224,6 +7224,21 @@ Prefab:
       propertyPath: sceneName
       value: Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 114378804940198484, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: mazePanelAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ebeab0c49a8eb364e95fa4d5d6c3129b, type: 3}
+    - target: {fileID: 114378804940198484, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: playerAudioSource
+      value: 
+      objectReference: {fileID: 1459048399}
+    - target: {fileID: 82811880813722206, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
   m_IsPrefabParent: 0
@@ -7381,6 +7396,11 @@ Transform:
 --- !u!1 &1459048398 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1899559574175110, guid: ed3e90e2231c06944be527b1c3fe9208,
+    type: 2}
+  m_PrefabInternal: {fileID: 786005812}
+--- !u!82 &1459048399 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82811880813722206, guid: ed3e90e2231c06944be527b1c3fe9208,
     type: 2}
   m_PrefabInternal: {fileID: 786005812}
 --- !u!1001 &1556235022

@@ -20,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
     HealthSystem instance;
 
+    public AudioSource playerAudioSource;
+
+    public AudioClip mazePanelAudioClip;
+    public AudioClip grateAudioClip;
+    public AudioClip stairsAudioClip;
+
 
 
     // Called at the beginning.
@@ -32,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+
+        playerAudioSource = GetComponent<AudioSource>();
 
         playerAnimator.SetBool("isSpinningLeft", false);
         playerAnimator.SetBool("isSpinningRight", false);
@@ -69,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 position = transform.position;
         if (Input.GetKey(KeyCode.W))
         {
-            StopSpinning();
             transform.Translate(Vector3.up * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.up * speed * Time.deltaTime));
             playerAnimator.SetBool("isSpinningUp", true);
@@ -79,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            StopSpinning();
             transform.Translate(Vector3.down * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.down * speed * Time.deltaTime));
             playerAnimator.SetBool("isSpinningDown", true);
@@ -89,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            StopSpinning();
             transform.Translate(Vector3.left * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.left * speed * Time.deltaTime));
             playerAnimator.SetBool("isSpinningLeft", true);
@@ -99,7 +104,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            StopSpinning();
             transform.Translate(Vector3.right * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.right * speed * Time.deltaTime));
             playerAnimator.SetBool("isSpinningRight", true);
@@ -125,30 +129,36 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "MazePanelUp")
         {
             Invoke("SpinningUp", 0.25f);
+            playerAudioSource.PlayOneShot(mazePanelAudioClip, 0.25F);
         }
         if (other.tag == "MazePanelDown")
         {
             Invoke("SpinningDown", 0.25f);
+            playerAudioSource.PlayOneShot(mazePanelAudioClip, 0.25F);
         }
         if (other.tag == "MazePanelLeft")
         {
             Invoke("SpinningLeft", 0.25f);
+            playerAudioSource.PlayOneShot(mazePanelAudioClip, 0.25F);
         }
         if (other.tag == "MazePanelRight")
         {
             Invoke("SpinningRight", 0.25f);
+            playerAudioSource.PlayOneShot(mazePanelAudioClip, 0.25F);
         }
 
         // The player stops spinning.
         if (other.tag == "Grate")
         {
             Invoke("StopSpinning", 0.1f);
+            playerAudioSource.PlayOneShot(grateAudioClip, 0.25F);
         }
 
 
         // If the Player collides with the stairs, the timer resets.
         if (other.tag == "Stairs")
         {
+            playerAudioSource.PlayOneShot(stairsAudioClip, 0.25F);
             if (OnSendLevel != null)
             {
                 OnSendLevel(level);
@@ -217,6 +227,8 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("isSpinningFASTUp", false);
         playerAnimator.SetBool("isSpinningFASTDown", false);
         playerRigidBody.velocity = (Vector3.zero);
+
+        playerAudioSource.PlayOneShot(grateAudioClip, 0.25F);
 
     }
 

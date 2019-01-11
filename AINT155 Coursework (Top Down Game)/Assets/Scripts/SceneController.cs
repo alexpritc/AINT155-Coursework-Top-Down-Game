@@ -11,7 +11,19 @@ public class SceneController : MonoBehaviour {
     public static int saveHealth;
     public static string sendSceneName;
 
+    public AudioClip newLevelClip;
+    public AudioSource newLevelAudio;
 
+    void Awake()
+    {
+        if (sceneName != "Level1" || sceneName != "Level1.5" || sceneName != "MainMenu" || sceneName != "Controls" || sceneName != "Introduction" ||
+            sceneName != "Introduction2")
+        {
+            newLevelAudio = GetComponent<AudioSource>();
+            newLevelAudio.PlayOneShot(newLevelClip, 1F);
+        }
+
+    }
 
     // Called once every frame.
     void Update()

@@ -8693,12 +8693,27 @@ Prefab:
       propertyPath: sceneName
       value: Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 114641051236980058, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: newLevelAudio
+      value: 
+      objectReference: {fileID: 1700124269}
+    - target: {fileID: 114641051236980058, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: newLevelClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e54f833138f7a146b222cb3f7ccca43, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1700124268 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1899559574175110, guid: ed3e90e2231c06944be527b1c3fe9208,
+    type: 2}
+  m_PrefabInternal: {fileID: 1700124267}
+--- !u!82 &1700124269 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82811880813722206, guid: ed3e90e2231c06944be527b1c3fe9208,
     type: 2}
   m_PrefabInternal: {fileID: 1700124267}
 --- !u!1 &1994860040
@@ -8757,7 +8772,7 @@ MonoBehaviour:
   dialogue:
     name: N/A
     sentences:
-    - ' One step forward... and then infinite spinning.'
+    - One step forward... and then infinite spinning.
     - '...'
     - Let's try going back to basics.
   stairsToNextLevel: {fileID: 1058059388}

@@ -306,7 +306,7 @@ MonoBehaviour:
     - Tell me about them.
     - '... ... ...'
     - '... ... ...'
-    - C'mon now, Tim. Like I've said before, your parents would be very
+    - Come on now, Tim. Like I've said before, your parents would be very
     - disappointed to hear just how uncooperative you're being.
     - 'I''m beginning to lose patience, Tim. '
     - '... ... ...'
@@ -802,6 +802,11 @@ Prefab:
       propertyPath: npcSource
       value: 
       objectReference: {fileID: 752865231}
+    - target: {fileID: 82519435274204440, guid: 555d7caec5d175041af05347e8786f6e,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 555d7caec5d175041af05347e8786f6e, type: 2}
   m_IsPrefabParent: 0

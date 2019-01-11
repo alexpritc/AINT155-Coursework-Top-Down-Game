@@ -10,6 +10,7 @@ TagManager:
   - MazePanelRight
   - Grate
   - Obstacles
+  - Stairs
   layers:
   - Default
   - TransparentFX

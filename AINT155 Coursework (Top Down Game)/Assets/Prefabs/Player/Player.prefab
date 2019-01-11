@@ -319,6 +319,10 @@ MonoBehaviour:
   mazePanelAudioClip: {fileID: 8300000, guid: ebeab0c49a8eb364e95fa4d5d6c3129b, type: 3}
   grateAudioClip: {fileID: 8300000, guid: d1940468cf416154cb1bea44d3fa6ce5, type: 3}
   stairsAudioClip: {fileID: 8300000, guid: 954f9f6308bc94043a43444a6c830220, type: 3}
+  playerMovementAudioClip: {fileID: 8300000, guid: 22dfb30a16e527e4084737730799bec4,
+    type: 3}
+  length: 0
+  timer: 0
 --- !u!114 &114641051236980058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693cee0a74e832b4eb918811ed53b2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: Level4
   newLevelClip: {fileID: 8300000, guid: 1e54f833138f7a146b222cb3f7ccca43, type: 3}
   newLevelAudio: {fileID: 82811880813722206}
 --- !u!212 &212515920636393990

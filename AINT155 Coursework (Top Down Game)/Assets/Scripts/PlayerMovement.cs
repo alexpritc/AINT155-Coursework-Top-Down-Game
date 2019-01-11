@@ -25,8 +25,10 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip mazePanelAudioClip;
     public AudioClip grateAudioClip;
     public AudioClip stairsAudioClip;
+    public AudioClip playerMovementAudioClip;
 
-
+    public float length;
+    public float timer = 0f;
 
     // Called at the beginning.
     void Start()
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
 
         playerAudioSource = GetComponent<AudioSource>();
+
+        length = playerMovementAudioClip.length;
 
         playerAnimator.SetBool("isSpinningLeft", false);
         playerAnimator.SetBool("isSpinningRight", false);
@@ -61,7 +65,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Movement();
         }
-        
+
+        timer += Time.deltaTime;
     }
 
 
@@ -79,37 +84,68 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.up * speed * Time.deltaTime));
+
             playerAnimator.SetBool("isSpinningUp", true);
             playerAnimator.SetBool("isSpinningLeft", false);
             playerAnimator.SetBool("isSpinningRight", false);
             playerAnimator.SetBool("isSpinningDown", false);
+
+
+            if (timer >= length)
+            {
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                timer = 0f;
+            }
         }
         else if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.down * speed * Time.deltaTime));
+
             playerAnimator.SetBool("isSpinningDown", true);
             playerAnimator.SetBool("isSpinningLeft", false);
             playerAnimator.SetBool("isSpinningRight", false);
             playerAnimator.SetBool("isSpinningUp", false);
+
+
+            if (timer >= length)
+            {
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                timer = 0f;
+            }
         }
         else if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.left * speed * Time.deltaTime));
+
             playerAnimator.SetBool("isSpinningLeft", true);
             playerAnimator.SetBool("isSpinningRight", false);
             playerAnimator.SetBool("isSpinningUp", false);
             playerAnimator.SetBool("isSpinningDown", false);
+
+            if (timer >= length)
+            {
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                timer = 0f;
+            }
         }
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
             Debug.Assert(transform.position == position + (Vector3.right * speed * Time.deltaTime));
+
             playerAnimator.SetBool("isSpinningRight", true);
             playerAnimator.SetBool("isSpinningLeft", false);
             playerAnimator.SetBool("isSpinningUp", false);
             playerAnimator.SetBool("isSpinningDown", false);
+
+            if (timer >= length)
+            {
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                timer = 0f;
+            }
+
         }
         else
         {

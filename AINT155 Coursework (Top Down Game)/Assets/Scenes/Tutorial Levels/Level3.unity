@@ -7276,7 +7276,7 @@ GameObject:
   - component: {fileID: 1147383974}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Stairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8703,6 +8703,16 @@ Prefab:
       propertyPath: newLevelClip
       value: 
       objectReference: {fileID: 8300000, guid: 1e54f833138f7a146b222cb3f7ccca43, type: 3}
+    - target: {fileID: 82811880813722206, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82327067275840734, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
   m_IsPrefabParent: 0
@@ -8773,7 +8783,7 @@ MonoBehaviour:
     name: N/A
     sentences:
     - One step forward... and then infinite spinning.
-    - '...'
+    - '... ... ...'
     - Let's try going back to basics.
   stairsToNextLevel: {fileID: 1058059388}
   fakeStairs: {fileID: 1147383973}

@@ -18,7 +18,7 @@ public class DecreaseHealth : MonoBehaviour {
         if (other.tag == "Player")
         {
             shouldDecreaseHealth = true;
-            audioSource.PlayOneShot(audioClip, 1F);
+            audioSource.PlayOneShot(audioClip, 0.5F);
         }
 
         Invoke("Destroy", 2f);

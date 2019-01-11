@@ -21,7 +21,7 @@ public class IncreaseHealth : MonoBehaviour {
         {
             shouldIncreaseHealth = true;
             hasIncreasedHealth = true;
-            audioSource.PlayOneShot(audioClip, 1F);            
+            audioSource.PlayOneShot(audioClip, 0.75F);            
         }
     }
 }

@@ -16,6 +16,8 @@ public class DialogueTrigger : MonoBehaviour {
 
     public float timer = 0f;
 
+
+
     // Introduction triggers
     bool hasInitialIntroductionDialogueBeenCalled = false;
 

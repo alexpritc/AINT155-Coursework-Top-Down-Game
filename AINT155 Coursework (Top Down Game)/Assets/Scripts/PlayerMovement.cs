@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Declaring events.
     public delegate void UpdateHealth(int newHealth);
     public static event UpdateHealth OnUpdateHealth;
 
@@ -219,12 +220,15 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    // Resets the layers to their original weights.
     public void ResetWeight()
     {
         playerAnimator.SetLayerWeight(0, 1);
         playerAnimator.SetLayerWeight(1, 0);
     }
 
+    // Changes the weights of the layers so that the currently
+    // playing animation shows.
     public void SetWeight()
     {
         playerAnimator.SetLayerWeight(0, 0);
@@ -232,6 +236,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+
+    // Sends the health data to the event.
     public void SendHealthData(int health)
     {
         if (OnUpdateHealth != null)

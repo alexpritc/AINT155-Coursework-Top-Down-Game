@@ -6,15 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
 
+    // Declaring variables.
     public string sceneName;
     public static int saveHealth;
     public static string sendSceneName;
 
+
+
+    // Called once every frame.
     void Update()
     {
         sendSceneName = sceneName;
     }
 
+    // Called when the GameObject collides with the player.
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -23,6 +28,9 @@ public class SceneController : MonoBehaviour {
         }
     }
 
+
+
+    // Load the next scene, and save the current health to carry over.
     public void SceneLoader()
     {
         SceneManager.LoadScene(sceneName);
@@ -30,6 +38,9 @@ public class SceneController : MonoBehaviour {
 
     }
 
+
+
+    // Exit the application.
     public void ExitApp()
     {
         Application.Quit();

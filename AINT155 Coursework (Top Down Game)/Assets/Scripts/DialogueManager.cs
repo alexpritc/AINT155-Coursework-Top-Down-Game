@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
+    // Declaring variables.
     private Queue<string> sentences;
 
     public Text nameText;
@@ -13,13 +14,22 @@ public class DialogueManager : MonoBehaviour {
 
     public Animator animator;
 
+    public AudioClip npcAudio;
+    public AudioSource npcSource;
 
-	void Start () {
+
+
+    // When the GameObject this script is attatched to is loaded...
+    void Start() {
 
         sentences = new Queue<string>();
+        npcSource = GetComponent<AudioSource>();
 
-	}
+    }
 
+
+
+    // Open the dialogue box, and display next sentence.
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
@@ -36,6 +46,7 @@ public class DialogueManager : MonoBehaviour {
         DisplayNextSentence();
     }
 
+    // When the continue button is clicked.
     public void DisplayNextSentence()
     {
 
@@ -54,19 +65,25 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-
+    // Display eachs character in the sentence individually.
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        
-        foreach(char letter in sentence.ToCharArray())
+
+        foreach (char letter in sentence.ToCharArray())
         {
+
+            if (letter.ToString() != " " && npcSource.isPlaying == false)
+            {
+                npcSource.PlayOneShot(npcAudio, 0.25F);
+            }
             dialogueText.text += letter;
             yield return null;
+
         }
     }
 
-	
+	// Closes the diagloue box.
 	void EndDialogue()
     {
         if (SceneController.sendSceneName == "Introduction")

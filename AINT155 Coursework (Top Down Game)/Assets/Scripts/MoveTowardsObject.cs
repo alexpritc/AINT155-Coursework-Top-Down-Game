@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class MoveTowardsObject : MonoBehaviour {
 
+    // Declaring variables.
     public Transform target;
     public float speed = 0.2f;
 
+
+
+    // Called once every frame.
     private void Update()
     {
         if (target != null)
@@ -34,6 +38,9 @@ public class MoveTowardsObject : MonoBehaviour {
         }
     }
 
+
+
+    // Sets the target to follow.
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;

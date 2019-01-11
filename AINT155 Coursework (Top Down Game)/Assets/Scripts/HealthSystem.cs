@@ -7,6 +7,8 @@ public class OnDamagedEvent : UnityEvent<int> { }
 
 public class HealthSystem : MonoBehaviour
 {
+    // Declaring variables. 
+
     /// <summary>
     /// Player health.
     /// </summary>
@@ -14,6 +16,10 @@ public class HealthSystem : MonoBehaviour
     public UnityEvent onDie;
     public OnDamagedEvent onDamaged;
 
+
+
+    // When the player takes damage, reduce health
+    // and allow onDie.
     public void TakeDamage(int damage)
     {
         health -= damage;

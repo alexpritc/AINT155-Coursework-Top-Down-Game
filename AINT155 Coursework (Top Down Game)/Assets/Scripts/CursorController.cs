@@ -12,6 +12,7 @@ public class CursorController : MonoBehaviour {
     public GameObject dialogueBox;
 
 
+
 	// Use this for initialization.
 	void Start ()
     {
@@ -28,11 +29,15 @@ public class CursorController : MonoBehaviour {
 
 	}
 
+
+
+    // Shoes the cursor.
     public void ShowCursor()
     {
         Cursor.visible = true;
     }
 
+    // Hides the cursor.
     public void HideCursor()
     {
         Cursor.visible = false;

@@ -7,6 +7,9 @@ public class DecreaseHealth : MonoBehaviour {
     // Declaring variables.
     public static bool shouldDecreaseHealth = false;
 
+    public AudioSource audioSource;
+
+    public AudioClip audioClip;
 
 
     // When the attached GameObject collides with the Player...
@@ -15,8 +18,15 @@ public class DecreaseHealth : MonoBehaviour {
         if (other.tag == "Player")
         {
             shouldDecreaseHealth = true;
+            audioSource.PlayOneShot(audioClip, 1F);
         }
 
+        Invoke("Destroy", 2f);
+    }
+
+    // Destroys gameObject.
+    public void Destroy()
+    {
         gameObject.SetActive(false);
     }
 }

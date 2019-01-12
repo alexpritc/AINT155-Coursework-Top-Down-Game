@@ -53,7 +53,7 @@ public class SceneController : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.R))
         {
-            SceneLoader();
+            SceneManager.LoadScene(CURRENTSCENE);
         }
     }
 
@@ -61,7 +61,7 @@ public class SceneController : MonoBehaviour {
     // Load the next scene, and save the current health to carry over.
     public void SceneLoader()
     {
-        SceneManager.LoadScene(CURRENTSCENE);
+        SceneManager.LoadScene(sceneName);
         saveHealth = HealthSystem.health;
 
     }

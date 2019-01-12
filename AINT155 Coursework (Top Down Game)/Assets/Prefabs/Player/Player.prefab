@@ -312,6 +312,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  takenDamage: {fileID: 8300000, guid: b6b817a905607104f9eb888b69bd7e02, type: 3}
 --- !u!114 &114378804940198484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -346,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level4
+  CURRENTSCENE: 
   newLevelClip: {fileID: 8300000, guid: 1e54f833138f7a146b222cb3f7ccca43, type: 3}
   newLevelAudio: {fileID: 82811880813722206}
 --- !u!212 &212515920636393990

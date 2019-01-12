@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
+  CURRENTSCENE: GameOver
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!95 &1534731891
@@ -1057,6 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
+  CURRENTSCENE: GameOver
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!95 &2009047915

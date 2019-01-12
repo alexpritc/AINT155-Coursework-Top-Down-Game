@@ -11,6 +11,9 @@ TagManager:
   - Grate
   - Obstacles
   - Stairs
+  - ColliderX
+  - ColliderY
+  - Enemy
   layers:
   - Default
   - TransparentFX

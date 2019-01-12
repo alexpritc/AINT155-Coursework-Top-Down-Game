@@ -16,7 +16,13 @@ public class HealthSystem : MonoBehaviour
     public UnityEvent onDie;
     public OnDamagedEvent onDamaged;
 
+    AudioSource playerAudioSource;
+    public AudioClip takenDamage;
 
+    void Start()
+    {
+        playerAudioSource = GetComponent<AudioSource>();
+    }
 
     // When the player takes damage, reduce health
     // and allow onDie.
@@ -24,6 +30,7 @@ public class HealthSystem : MonoBehaviour
     {
         health -= damage;
         onDamaged.Invoke(health);
+        playerAudioSource.PlayOneShot(takenDamage, 0.25f);
 
         if (health < 1)
         {

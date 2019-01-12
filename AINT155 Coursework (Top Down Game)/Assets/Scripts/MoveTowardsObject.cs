@@ -8,35 +8,97 @@ public class MoveTowardsObject : MonoBehaviour {
     public Transform target;
     public float speed = 0.2f;
 
+    Animator enemyAnimator;
+    AudioSource enemyAudioSource;
 
+    public AudioClip enemyMoving;
 
-    // Called once every frame.
-    private void Update()
+    void Start()
     {
-        if (target != null)
+        enemyAnimator = GetComponent<Animator>();
+        enemyAudioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        Vector3 position = transform.position;
+
+        if (CollisionDetection.isTouchingPlayer == false)
         {
-            Vector3 position = transform.position;
-
-            if (target.position.y > transform.position.y)
+            if (CollisionDetection.isTouchingColliderY == false)
             {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
+                MoveOnX();
             }
-            if (target.position.y < transform.position.y)
+            else if (CollisionDetection.isTouchingColliderY == true)
             {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
+                MoveOnY();
             }
-            if (target.position.x > transform.position.x)
+            
+            if (enemyAudioSource.isPlaying == false)
             {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                enemyAudioSource.PlayOneShot(enemyMoving, 0.01f);
             }
-            if (target.position.x < transform.position.x)
-            {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-            }
-
 
         }
+        else
+        {
+            IsIdle();
+        }
+
+
+
     }
+
+    // Move on the X axis.
+    public void MoveOnX()
+    {
+        if (target.position.x < transform.position.x)
+        {
+
+            IsIdle();
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            enemyAnimator.SetBool("isLeft", true);
+
+        }
+        else if (target.position.x > transform.position.x)
+        {
+            IsIdle();
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            enemyAnimator.SetBool("isRight", true);
+
+        }
+
+    }
+
+    // Move on the Y axis.
+    public void MoveOnY()
+    {
+        if (target.position.y < transform.position.y)
+        {
+            IsIdle();
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            enemyAnimator.SetBool("isDown", true);
+        }
+        else if (target.position.y > transform.position.y)
+        {
+            IsIdle();
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+            enemyAnimator.SetBool("isUp", true);
+        }
+        
+    }
+
+
+    
+    // Not moving. Stop all animations.   
+    public void IsIdle()
+    {
+        enemyAnimator.SetBool("isLeft", false);
+        enemyAnimator.SetBool("isUp", false);
+        enemyAnimator.SetBool("isDown", false);
+        enemyAnimator.SetBool("isRight", false);
+    }
+
 
 
 
@@ -45,5 +107,6 @@ public class MoveTowardsObject : MonoBehaviour {
     {
         target = newTarget;
     }
+
 
 }

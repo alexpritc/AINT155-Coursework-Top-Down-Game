@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (timer >= length)
             {
-                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.01F);
                 timer = 0f;
             }
         }
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (timer >= length)
             {
-                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.01F);
                 timer = 0f;
             }
         }
@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (timer >= length)
             {
-                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.01F);
                 timer = 0f;
             }
         }
@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (timer >= length)
             {
-                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.1F);
+                playerAudioSource.PlayOneShot(playerMovementAudioClip, 0.01F);
                 timer = 0f;
             }
 

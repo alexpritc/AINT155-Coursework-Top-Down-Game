@@ -45,6 +45,11 @@ public class SpawnedIn : MonoBehaviour {
                     spawnedInSource.PlayOneShot(spawnedIn, 1f);
                     spawned = true;
                 }
+                if (spawned == false && SceneController.sendSceneName == "Level9")
+                {
+                    spawnedInSource.PlayOneShot(spawnedIn, 1f);
+                    spawned = true;
+                }
 
             }
         }

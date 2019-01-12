@@ -56,6 +56,9 @@ public class DialogueTrigger : MonoBehaviour {
     // Level 7 triggers.
     bool hasInitialLevel7DialogueBeenCalled = false;
 
+    // Level 8 triggers.
+    bool hasInitialLevel8DialogueBeenCalled = false;
+
 
 
     // Called once at initialisation.
@@ -149,6 +152,11 @@ public class DialogueTrigger : MonoBehaviour {
         if (sceneName == "Level7")
         {
             Level7();
+        }
+
+        if (sceneName == "Level8")
+        {
+            Level8();
         }
     }
 
@@ -328,6 +336,20 @@ public class DialogueTrigger : MonoBehaviour {
         {
             hasInitialLevel7DialogueBeenCalled = true;
             TriggerDialogue();
+        }
+    }
+
+    public void Level8()
+    {
+        if (hasInitialLevel8DialogueBeenCalled == false)
+        {
+            TriggerDialogue();
+            hasInitialLevel8DialogueBeenCalled = true;
+        }
+
+        if (timer >= 10f)
+        {
+            stairsToNextLevel.SetActive(true);
         }
     }
 

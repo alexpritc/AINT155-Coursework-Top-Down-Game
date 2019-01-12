@@ -11,6 +11,10 @@ public class SceneController : MonoBehaviour {
     public static int saveHealth;
     public static string sendSceneName;
 
+    public string CURRENTSCENE;
+
+    public static string sceneNameGameOver;
+
     public AudioClip newLevelClip;
     public AudioSource newLevelAudio;
 
@@ -29,6 +33,8 @@ public class SceneController : MonoBehaviour {
     void Update()
     {
         sendSceneName = sceneName;
+        ResetScene();
+
     }
 
     // Called when the GameObject collides with the player.
@@ -42,10 +48,20 @@ public class SceneController : MonoBehaviour {
 
 
 
+    // Reset Scene
+    public void ResetScene()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneLoader();
+        }
+    }
+
+
     // Load the next scene, and save the current health to carry over.
     public void SceneLoader()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(CURRENTSCENE);
         saveHealth = HealthSystem.health;
 
     }
@@ -56,6 +72,13 @@ public class SceneController : MonoBehaviour {
     public void ExitApp()
     {
         Application.Quit();
+    }
+
+    // Load Game Over scene.
+    public void GameOver()
+    {
+        sceneNameGameOver = sendSceneName;
+        SceneManager.LoadScene("GameOver");
     }
 
 

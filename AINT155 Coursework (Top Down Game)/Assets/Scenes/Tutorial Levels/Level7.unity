@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49c34fc7b0dcff41a549bccec69165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIncreasedHealth: 0
   audioSource: {fileID: 1365556152}
   audioClip: {fileID: 8300000, guid: f37e52d9a04e5c5459cba20ffb1ecac1, type: 3}
 --- !u!1001 &562726649
@@ -12740,6 +12741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49c34fc7b0dcff41a549bccec69165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIncreasedHealth: 0
   audioSource: {fileID: 1365556152}
   audioClip: {fileID: 8300000, guid: f37e52d9a04e5c5459cba20ffb1ecac1, type: 3}
 --- !u!1 &1402970118
@@ -13964,6 +13966,11 @@ Prefab:
       propertyPath: sceneName
       value: Level7
       objectReference: {fileID: 0}
+    - target: {fileID: 114641051236980058, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: CURRENTSCENE
+      value: Level7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
   m_IsPrefabParent: 0
@@ -14083,6 +14090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49c34fc7b0dcff41a549bccec69165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIncreasedHealth: 0
   audioSource: {fileID: 2047704707}
   audioClip: {fileID: 8300000, guid: f37e52d9a04e5c5459cba20ffb1ecac1, type: 3}
 --- !u!82 &2047704707

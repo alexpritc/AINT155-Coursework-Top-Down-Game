@@ -6956,6 +6956,11 @@ Prefab:
       propertyPath: sceneName
       value: Level1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114641051236980058, guid: ed3e90e2231c06944be527b1c3fe9208,
+        type: 2}
+      propertyPath: CURRENTSCENE
+      value: Level1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed3e90e2231c06944be527b1c3fe9208, type: 2}
   m_IsPrefabParent: 0

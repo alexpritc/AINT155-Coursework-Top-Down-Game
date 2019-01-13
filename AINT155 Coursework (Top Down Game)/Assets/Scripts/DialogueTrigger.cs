@@ -221,7 +221,7 @@ public class DialogueTrigger : MonoBehaviour {
         {
 
             dialogue.sentences[0] = "Well done, Tim. Now, I think we should talk more.";
-            dialogue.sentences[1] = "Walk into the stairs to explore deeper.";
+            dialogue.sentences[1] = "Let's go to the next level. Walk into the stairs to explore deeper.";
 
             Invoke("TriggerDialogue", 1f);
 
@@ -384,6 +384,7 @@ public class DialogueTrigger : MonoBehaviour {
         {
             TriggerDialogue();
             hasInitialLevel13DialogueBeenCalled = true;
+            HealthSystem.health -= 10;
         }
 
         if (timer >= 12.5f && hasNAContinuedTalkLevel13 == false)
@@ -397,10 +398,12 @@ public class DialogueTrigger : MonoBehaviour {
             dialogue.sentences[4] = "Try harder.";
 
             TriggerDialogue();
+            HealthSystem.health -= 10;
         }
 
         if (timer >= 20f)
         {
+            HealthSystem.health -= 5;
             stairsToNextLevel.SetActive(true);
         }
     }

@@ -5,29 +5,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CursorController : MonoBehaviour {
-    
+
     // Declaring variables.
     public string currentScene;
 
     public GameObject dialogueBox;
 
 
-
-	// Use this for initialization.
-	void Start ()
+   void Start ()
     {
         if (currentScene != "MainMenu")
         {
-            // Hides the cursor in-game.
-            Cursor.visible = false;
-        }
+        // Hides the cursor in-game.
+        Cursor.visible = false;
+    }
         else
         {
-            // Hides the cursor in-game.
-            Cursor.visible = true;
-        }
+        // Hides the cursor in-game.
+        Cursor.visible = true;
+    }
 
-	}
+    }
 
 
 

@@ -712,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Introduction
+  CURRENTSCENE: 
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!95 &1096429077
@@ -1030,6 +1031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  CURRENTSCENE: 
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!1 &1482012509
@@ -1478,6 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Controls
+  CURRENTSCENE: 
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!1 &2094907614
@@ -1617,6 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level1
+  CURRENTSCENE: 
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!95 &2094907620

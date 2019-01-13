@@ -65,6 +65,9 @@ public class DialogueTrigger : MonoBehaviour {
     bool hasInitialLevel13DialogueBeenCalled = false;
     bool hasNAContinuedTalkLevel13 = false;
 
+    // Level 16 triggers.
+    bool hasInitialLevel16DialogueBeenCalled = false;
+
 
 
     // Called once at initialisation.
@@ -173,6 +176,11 @@ public class DialogueTrigger : MonoBehaviour {
         if (sceneName == "Level13")
         {
             Level13();
+        }
+
+        if (sceneName == "Level16")
+        {
+            Level16();
         }
     }
 
@@ -405,6 +413,15 @@ public class DialogueTrigger : MonoBehaviour {
         {
             HealthSystem.health -= 5;
             stairsToNextLevel.SetActive(true);
+        }
+    }
+
+    public void Level16()
+    {
+        if (hasInitialLevel16DialogueBeenCalled == false)
+        {
+            hasInitialLevel16DialogueBeenCalled = true;
+            TriggerDialogue();
         }
     }
 

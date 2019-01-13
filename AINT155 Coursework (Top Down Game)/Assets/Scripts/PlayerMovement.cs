@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     // Called at the beginning.
     void Start()
     {
+        isSpinning = false;
+
         if (OnSendLevel != null)
         {
             OnSendLevel(level);

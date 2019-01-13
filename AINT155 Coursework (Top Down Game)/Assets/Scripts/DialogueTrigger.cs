@@ -17,6 +17,8 @@ public class DialogueTrigger : MonoBehaviour {
     public float timer = 0f;
 
 
+    // General Triggers;
+    bool hasInitialDialogueBeenCalled = false;
 
     // Introduction triggers
     bool hasInitialIntroductionDialogueBeenCalled = false;
@@ -59,6 +61,10 @@ public class DialogueTrigger : MonoBehaviour {
     // Level 8 triggers.
     bool hasInitialLevel8DialogueBeenCalled = false;
 
+    // Level 13 triggers.
+    bool hasInitialLevel13DialogueBeenCalled = false;
+    bool hasNAContinuedTalkLevel13 = false;
+
 
 
     // Called once at initialisation.
@@ -93,6 +99,11 @@ public class DialogueTrigger : MonoBehaviour {
         DialogueSequence();
     
         timer += Time.fixedDeltaTime;
+
+      while (hasInitialLevel13DialogueBeenCalled == true)
+        {
+            DecreaseHealth.shouldDecreaseHealth = true;
+        }
     }
 
 
@@ -157,6 +168,16 @@ public class DialogueTrigger : MonoBehaviour {
         if (sceneName == "Level8")
         {
             Level8();
+        }
+
+        if (sceneName == "Level12")
+        {
+            Level12();
+        }
+
+        if (sceneName == "Level13")
+        {
+            Level13();
         }
     }
 
@@ -348,6 +369,42 @@ public class DialogueTrigger : MonoBehaviour {
         }
 
         if (timer >= 10f)
+        {
+            stairsToNextLevel.SetActive(true);
+        }
+    }
+
+    public void Level12()
+    {
+        if (EnvironmentalDamage.isCompletingPuzzle == false && hasInitialDialogueBeenCalled == false)
+        {
+            hasInitialDialogueBeenCalled = true;
+            TriggerDialogue();
+        }
+    }
+
+    public void Level13()
+    {
+        if (hasInitialLevel13DialogueBeenCalled == false)
+        {
+            TriggerDialogue();
+            hasInitialLevel13DialogueBeenCalled = true;
+        }
+
+        if (timer >= 12.5f && hasNAContinuedTalkLevel13 == false)
+        {
+            hasNAContinuedTalkLevel13 = true;
+
+            dialogue.sentences[0] = "~Other Tim~ is what your parents, teachers";
+            dialogue.sentences[1] = "and everyone that knows you wishes you were.";
+            dialogue.sentences[2] = "Why can't you be more like them, Tim?";
+            dialogue.sentences[3] = "... ... ... ... ... ...";
+            dialogue.sentences[4] = "Try harder.";
+
+            TriggerDialogue();
+        }
+
+        if (timer >= 20f)
         {
             stairsToNextLevel.SetActive(true);
         }

@@ -18,33 +18,45 @@ EditorBuildSettings:
     path: Assets/Scenes/UI/Controls.unity
     guid: 46d55c5fccaa351408d4c970ce5a2128
   - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level1.unity
-    guid: d41fb61e161de434497b39a56ef3d536
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level1.5.unity
-    guid: 3c1942dcf04d804479cd828cc9d22510
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level2.unity
-    guid: 9230fa55fbfd66e46ae21c31dbed692c
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level3.unity
-    guid: 02eb39dc65a3bdd49a3cb0d844dc930d
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level4.unity
-    guid: 74e81c75b7aa39443b056a4a94aee90b
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level5.unity
-    guid: 75a56c762607ea3448a6bc76c8cf8952
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level6.unity
-    guid: faa5439eb46bd2a48814c9f078dd6d1e
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level7.unity
-    guid: dbb6a67373ade534ca4fcb0fea57832f
-  - enabled: 1
-    path: Assets/Scenes/Tutorial Levels/Level8.unity
-    guid: f637881285d4c894eb02fcf7032126c0
-  - enabled: 1
     path: Assets/Scenes/UI/GameOver.unity
     guid: 84f67550c55b3c8459712ecae7255631
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: d41fb61e161de434497b39a56ef3d536
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.5.unity
+    guid: 3c1942dcf04d804479cd828cc9d22510
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2.unity
+    guid: 9230fa55fbfd66e46ae21c31dbed692c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3.unity
+    guid: 02eb39dc65a3bdd49a3cb0d844dc930d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4.unity
+    guid: 74e81c75b7aa39443b056a4a94aee90b
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level5.unity
+    guid: 75a56c762607ea3448a6bc76c8cf8952
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level6.unity
+    guid: faa5439eb46bd2a48814c9f078dd6d1e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level7.unity
+    guid: dbb6a67373ade534ca4fcb0fea57832f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level8.unity
+    guid: f637881285d4c894eb02fcf7032126c0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level9.unity
+    guid: 72b42fef1e313be4ea4534b780a11309
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level10.unity
+    guid: 6b2c9cf0a312e8e4bab36ef4652370a1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level11.unity
+    guid: b6d84f7fd31fc184497877c386b41593
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level12.unity
+    guid: 7a626fad2b3cb904cb8fafb0f2e74064
   m_configObjects: {}

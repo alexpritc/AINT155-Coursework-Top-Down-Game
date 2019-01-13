@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Declaring Variables.
     public float speed;
-    public bool isSpinning = false;
+    public static bool isSpinning = false;
     public int level = 1;
 
     Rigidbody2D playerRigidBody;

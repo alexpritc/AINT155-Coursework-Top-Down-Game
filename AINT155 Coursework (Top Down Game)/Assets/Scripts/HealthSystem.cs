@@ -18,6 +18,9 @@ public class HealthSystem : MonoBehaviour
 
     AudioSource playerAudioSource;
     public AudioClip takenDamage;
+    public AudioClip die;
+
+    bool hasPlayedDeathSound = false;
 
     void Start()
     {
@@ -34,7 +37,17 @@ public class HealthSystem : MonoBehaviour
 
         if (health < 1)
         {
-            onDie.Invoke();
+            if (hasPlayedDeathSound == false)
+            {
+                playerAudioSource.PlayOneShot(die, 0.25f);
+                hasPlayedDeathSound = true;
+            }
+
+            if (hasPlayedDeathSound == true)
+            {
+                onDie.Invoke();
+            }
+
         }
     }
 }

@@ -99,11 +99,6 @@ public class DialogueTrigger : MonoBehaviour {
         DialogueSequence();
     
         timer += Time.fixedDeltaTime;
-
-      while (hasInitialLevel13DialogueBeenCalled == true)
-        {
-            DecreaseHealth.shouldDecreaseHealth = true;
-        }
     }
 
 

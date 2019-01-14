@@ -30,10 +30,15 @@ Unity 2D Zombie Shooter
 All art and code libraries were created by Alexander Pritchard.
 
 
+Fonts:
+
+6809 Chargen by Typodermic Fonts Inc.
+
+
 Sound Design:
 
-All sound effects were created by, and belong to https://freesound.org/people/LittleRobotSoundFactory/
+All sound effects were created by, and belong to https://freesound.org/people/LittleRobotSoundFactory/.
 
-General background music was created by, and belongs to https://www.youtube.com/user/kmmusic
+General background music was created by, and belongs to https://www.youtube.com/user/kmmusic.
 
-Game Won background music was created by, and belongs to https://freesound.org/people/Tristan_Lohengrin/
+Game Won background music was created by, and belongs to https://freesound.org/people/Tristan_Lohengrin/.

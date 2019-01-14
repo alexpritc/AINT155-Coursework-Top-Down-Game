@@ -87,11 +87,11 @@ public class DialogueManager : MonoBehaviour {
 	// Closes the diagloue box.
 	void EndDialogue()
     {
-        if (SceneController.sendSceneName == "Introduction")
+        if (SceneController.sendSceneName == "Introduction2")
         {
             SceneManager.LoadScene("Introduction2");
         }
-        if (SceneController.sendSceneName == "Introduction2")
+        if (SceneController.sendSceneName == "MainMenu")
         {
             SceneManager.LoadScene("MainMenu");
         }

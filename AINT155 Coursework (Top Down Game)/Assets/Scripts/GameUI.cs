@@ -7,8 +7,8 @@ public class GameUI : MonoBehaviour
 {
     // Declaring varaibles.
     public Slider healthBar;
-    public int playerLevel = 1;
 
+    public int playerLevel = 1;
     public int newHealth;
 
 
@@ -16,16 +16,15 @@ public class GameUI : MonoBehaviour
     // Called at the beginning...
     public void Start()
     {
-        //if (SceneController.sendSceneName != "Level1")
-        //{
-        //    healthBar.value = SceneController.saveHealth;
-        //}
-        //if (SceneController.sendSceneName == "Level1")
-        //{
-        //    healthBar.value = 100;
-        //}
 
-        healthBar.value = HealthSystem.health;
+        if (SceneController.sendSceneName != "Level1")
+        {
+            healthBar.value = SceneController.saveHealth;
+        }
+        if (SceneController.sendSceneName == "Level1")
+        {
+            healthBar.value = HealthSystem.health;
+        }
         
     }
 

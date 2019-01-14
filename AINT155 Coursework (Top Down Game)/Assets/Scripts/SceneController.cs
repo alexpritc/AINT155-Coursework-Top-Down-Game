@@ -20,19 +20,33 @@ public class SceneController : MonoBehaviour {
 
     void Awake()
     {
+        sendSceneName = nextScene;
+
         if (nextScene != "Level1" || nextScene != "Level1.5" || nextScene != "MainMenu" || nextScene != "Controls" || nextScene != "Introduction" ||
             nextScene != "Introduction2")
         {
             newLevelAudio = GetComponent<AudioSource>();
             newLevelAudio.PlayOneShot(newLevelClip, 1F);
         }
+
+        // TESTING TESTING
+        if (nextScene == "Level14")
+        {
+            saveHealth = 100;
+        }
+        // TESTING TESTING
     }
 
     // Called once every frame.
     void Update()
     {
         sendSceneName = nextScene;
-        ResetScene();
+        if (nextScene != "Level1" || nextScene != "Level1.5" || nextScene != "MainMenu" || nextScene != "Controls" || nextScene != "Introduction" ||
+            nextScene != "Introduction2")
+        {
+            ResetScene();
+        }
+            
 
     }
 
@@ -52,8 +66,8 @@ public class SceneController : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(currentScene);
             saveHealth = HealthSystem.health;
+            SceneManager.LoadScene(currentScene);
         }
     }
 
@@ -61,9 +75,8 @@ public class SceneController : MonoBehaviour {
     // Load the next scene, and save the current health to carry over.
     public void SceneLoader()
     {
-        SceneManager.LoadScene(nextScene);
         saveHealth = HealthSystem.health;
-
+        SceneManager.LoadScene(nextScene);
     }
 
 

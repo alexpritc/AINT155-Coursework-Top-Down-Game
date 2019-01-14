@@ -791,8 +791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693cee0a74e832b4eb918811ed53b2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Introduction2
-  CURRENTSCENE: 
+  nextScene: MainMenu
+  currentScene: Introduction2
   newLevelClip: {fileID: 0}
   newLevelAudio: {fileID: 0}
 --- !u!4 &787798397
@@ -1392,6 +1392,11 @@ Prefab:
       propertyPath: currentScene
       value: Introduction
       objectReference: {fileID: 0}
+    - target: {fileID: 114555801431370430, guid: 81c964cbc32d52d45818003111b64824,
+        type: 2}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 320603171}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81c964cbc32d52d45818003111b64824, type: 2}
   m_IsPrefabParent: 0

@@ -225,7 +225,7 @@ public class DialogueTrigger : MonoBehaviour {
 
         // N/A says something to indicate the player
         // needs to go to the next Level.
-        if (timer >= 15f && currentDialogue == "Next Level" && hasNASpokenWhilstPlayerMoves == true)
+        if (timer >= 10f && currentDialogue == "Next Level" && hasNASpokenWhilstPlayerMoves == true)
         {
 
             dialogue.sentences[0] = "Well done, Tim. Now, I think we should talk more.";
@@ -392,7 +392,6 @@ public class DialogueTrigger : MonoBehaviour {
         {
             TriggerDialogue();
             hasInitialLevel13DialogueBeenCalled = true;
-            HealthSystem.health -= 10;
         }
 
         if (timer >= 12.5f && hasNAContinuedTalkLevel13 == false)
@@ -406,12 +405,10 @@ public class DialogueTrigger : MonoBehaviour {
             dialogue.sentences[4] = "Try harder.";
 
             TriggerDialogue();
-            HealthSystem.health -= 10;
         }
 
         if (timer >= 20f)
         {
-            HealthSystem.health -= 5;
             stairsToNextLevel.SetActive(true);
         }
     }

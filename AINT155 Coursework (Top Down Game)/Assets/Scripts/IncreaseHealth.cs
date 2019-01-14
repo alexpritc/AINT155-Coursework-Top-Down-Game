@@ -17,7 +17,7 @@ public class IncreaseHealth : MonoBehaviour {
     // When the player collides with this, it increases the health.
 	void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && hasIncreasedHealth == false)
+        if (other.tag == "Player" && hasIncreasedHealth == false && HealthSystem.health < 100)
         {
             shouldIncreaseHealth = true;
             hasIncreasedHealth = true;

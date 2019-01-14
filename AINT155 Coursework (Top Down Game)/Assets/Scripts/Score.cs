@@ -71,7 +71,7 @@ public class Score : MonoBehaviour {
             case "Level19":
                 percentage = "90%";
                 break;
-            case "Level20":
+            case "GameWon":
                 percentage = "95%";
                 break;
 

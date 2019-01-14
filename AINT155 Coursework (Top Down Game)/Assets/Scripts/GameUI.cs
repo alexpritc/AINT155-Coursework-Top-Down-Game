@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameUI : MonoBehaviour
 {
@@ -32,12 +33,14 @@ public class GameUI : MonoBehaviour
         if (IncreaseHealth.shouldIncreaseHealth == true)
         {
             healthBar.value = healthBar.value + 10;
+            HealthSystem.health = Convert.ToInt32(healthBar.value);
             IncreaseHealth.shouldIncreaseHealth = false;
         }
 
         if (DecreaseHealth.shouldDecreaseHealth == true)
         {
             healthBar.value = healthBar.value - 10;
+            HealthSystem.health = Convert.ToInt32(healthBar.value);
             DecreaseHealth.shouldDecreaseHealth = false;
         }
     }

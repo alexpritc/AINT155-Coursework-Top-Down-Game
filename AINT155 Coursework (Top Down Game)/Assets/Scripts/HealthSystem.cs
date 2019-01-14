@@ -25,6 +25,15 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         playerAudioSource = GetComponent<AudioSource>();
+
+        if (SceneController.sendSceneName != "Level1")
+        {
+            health = SceneController.saveHealth;
+        }
+        if (SceneController.sendSceneName == "Level1")
+        {
+            health = 100;
+        }
     }
 
     // When the player takes damage, reduce health

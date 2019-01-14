@@ -26,7 +26,6 @@ public class SceneController : MonoBehaviour {
             newLevelAudio = GetComponent<AudioSource>();
             newLevelAudio.PlayOneShot(newLevelClip, 1F);
         }
-
     }
 
     // Called once every frame.

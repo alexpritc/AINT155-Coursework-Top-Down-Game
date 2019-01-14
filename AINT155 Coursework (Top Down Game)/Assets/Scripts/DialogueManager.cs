@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour {
     public Animator animator;
 
     public AudioClip npcAudio;
+
     public AudioSource npcSource;
 
 

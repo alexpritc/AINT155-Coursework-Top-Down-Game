@@ -19,9 +19,9 @@ Unity 2D Zombie Shooter
 
 # Instructions for usage
 
-1. Double click the folder "Prototype Build"
+1. Double click the folder "The Dawn Of Tim - Beta Build"
 
-2. Click on and download the .exe file inside ("Prototype-Build.exe")
+2. Click on and download the .exe file inside ("The Dawn Of Tim - Beta Build.exe")
 
 3. Run said executable file and enjoy!
 

@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
     // Declaring variables.
-    public string sceneName;
+    public string nextScene;
+    public string currentScene;
+
     public static int saveHealth;
     public static string sendSceneName;
-
-    public string CURRENTSCENE;
 
     public static string sceneNameGameOver;
 
@@ -20,8 +20,8 @@ public class SceneController : MonoBehaviour {
 
     void Awake()
     {
-        if (sceneName != "Level1" || sceneName != "Level1.5" || sceneName != "MainMenu" || sceneName != "Controls" || sceneName != "Introduction" ||
-            sceneName != "Introduction2")
+        if (nextScene != "Level1" || nextScene != "Level1.5" || nextScene != "MainMenu" || nextScene != "Controls" || nextScene != "Introduction" ||
+            nextScene != "Introduction2")
         {
             newLevelAudio = GetComponent<AudioSource>();
             newLevelAudio.PlayOneShot(newLevelClip, 1F);
@@ -31,7 +31,7 @@ public class SceneController : MonoBehaviour {
     // Called once every frame.
     void Update()
     {
-        sendSceneName = sceneName;
+        sendSceneName = nextScene;
         ResetScene();
 
     }
@@ -52,7 +52,8 @@ public class SceneController : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(CURRENTSCENE);
+            SceneManager.LoadScene(currentScene);
+            saveHealth = HealthSystem.health;
         }
     }
 
@@ -60,7 +61,7 @@ public class SceneController : MonoBehaviour {
     // Load the next scene, and save the current health to carry over.
     public void SceneLoader()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(nextScene);
         saveHealth = HealthSystem.health;
 
     }

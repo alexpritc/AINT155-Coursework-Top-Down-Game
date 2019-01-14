@@ -11828,6 +11828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1325526250}
+  healthBarCap: {fileID: 1151389179}
   playerLevel: 0
   newHealth: 0
 --- !u!114 &1036664883
@@ -12196,6 +12197,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8ce3bcdd42277b4fbc7d35eca91d8b2, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1151389179 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114671643426736638, guid: bca141618c7545a4991f0ef07c3533d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1325526249}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1268535247
 Prefab:
   m_ObjectHideFlags: 0
@@ -12348,36 +12355,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148074805154354, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148074805154354, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148074805154354, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114100615142958842, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114100615142958842, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114100615142958842, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bca141618c7545a4991f0ef07c3533d6, type: 2}

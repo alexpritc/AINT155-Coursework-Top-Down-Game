@@ -8,6 +8,8 @@ public class GameUI : MonoBehaviour
     // Declaring varaibles.
     public Slider healthBar;
 
+    public Text healthBarCap;
+
     public int playerLevel = 1;
     public int newHealth;
 
@@ -44,6 +46,8 @@ public class GameUI : MonoBehaviour
             HealthSystem.health = Convert.ToInt32(healthBar.value);
             DecreaseHealth.shouldDecreaseHealth = false;
         }
+
+        healthBarCap.text = healthBar.value.ToString() + "/100";
     }
 
 

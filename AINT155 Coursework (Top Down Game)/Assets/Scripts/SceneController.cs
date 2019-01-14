@@ -29,12 +29,11 @@ public class SceneController : MonoBehaviour {
             newLevelAudio.PlayOneShot(newLevelClip, 1F);
         }
 
-        // TESTING TESTING
-        if (nextScene == "Level14")
+        if (nextScene == "Level1")
         {
             saveHealth = 100;
+            HealthSystem.health = 100;
         }
-        // TESTING TESTING
     }
 
     // Called once every frame.

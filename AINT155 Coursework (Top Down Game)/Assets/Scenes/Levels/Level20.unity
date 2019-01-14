@@ -11658,6 +11658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1325526250}
+  healthBarCap: {fileID: 1325526252}
   playerLevel: 0
   newHealth: 0
 --- !u!114 &1036664883
@@ -12212,6 +12213,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
     type: 2}
   m_PrefabInternal: {fileID: 1325526249}
+--- !u!114 &1325526252 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114671643426736638, guid: bca141618c7545a4991f0ef07c3533d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1325526249}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1420980439
 Prefab:
   m_ObjectHideFlags: 0

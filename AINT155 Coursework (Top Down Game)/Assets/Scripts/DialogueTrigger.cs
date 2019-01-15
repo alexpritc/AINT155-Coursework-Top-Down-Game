@@ -211,7 +211,7 @@ public class DialogueTrigger : MonoBehaviour {
             if (hasbeenCalledOnCurrentLevel == false)
             {
 
-                if (spinningTimer >= 5f)
+                if (spinningTimer >= 10f)
                 {
                     dialogue.sentences[0] = "Look, it's ok to admit you're bad.";
                     dialogue.sentences[1] = "If you're stuck, press R to reset the level.";

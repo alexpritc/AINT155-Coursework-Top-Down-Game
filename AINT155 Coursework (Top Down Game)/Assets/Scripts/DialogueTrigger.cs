@@ -103,7 +103,12 @@ public class DialogueTrigger : MonoBehaviour {
     void Update()
     {
         DialogueSequence();
-        IsSpinningPrompt();
+
+        if (sceneName != "Level1" && sceneName != "Level1.5" && sceneName != "Level2" &&
+              sceneName != "Level3" && sceneName != "Level4" && sceneName != "Level5")
+        {
+            IsSpinningPrompt();
+        }
 
         timer += Time.fixedDeltaTime;
         
@@ -203,7 +208,6 @@ public class DialogueTrigger : MonoBehaviour {
     {
         if (PlayerMovement.isSpinning == true)
         {
-            
             if (hasbeenCalledOnCurrentLevel == false)
             {
 
@@ -216,8 +220,8 @@ public class DialogueTrigger : MonoBehaviour {
                     TriggerDialogue();
                     hasbeenCalledOnCurrentLevel = true;
                 }
-            }
 
+            }
         }
 
     }

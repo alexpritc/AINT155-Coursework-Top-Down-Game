@@ -104,9 +104,18 @@ public class DialogueTrigger : MonoBehaviour {
     {
         DialogueSequence();
         IsSpinningPrompt();
-    
+
         timer += Time.fixedDeltaTime;
-        spinningTimer += Time.fixedDeltaTime;
+        
+        if (PlayerMovement.isSpinning == true)
+        {
+            spinningTimer += Time.fixedDeltaTime;
+        }
+        else
+        {
+            spinningTimer = 0f;
+        }
+
     }
 
 
@@ -192,29 +201,25 @@ public class DialogueTrigger : MonoBehaviour {
     // Prompts the player to press R if they've been spinning for ages.
     public void IsSpinningPrompt()
     {
-        while (PlayerMovement.isSpinning == true)
+        if (PlayerMovement.isSpinning == true)
         {
+            
             if (hasbeenCalledOnCurrentLevel == false)
             {
-                if (sceneName == "Level6" || sceneName == "Level7" || sceneName == "Level9" ||
-                    sceneName == "Level10" || sceneName == "Level11" || sceneName == "Level12" ||
-                    sceneName == "Level14" || sceneName == "Level15" || sceneName == "Level16" || sceneName == "Level17" ||
-                    sceneName == "Level18" || sceneName == "Level19"|| sceneName == "Level10")
+
+                if (spinningTimer >= 5f)
                 {
-                    spinningTimer = 0f;
+                    dialogue.sentences[0] = "Look, it's ok to admit you're bad.";
+                    dialogue.sentences[1] = "If you're stuck, press R to reset the level.";
+                    dialogue.sentences[2] = "Your parents did say you would fail.";
 
-                    if (spinningTimer > 5f)
-                    {
-                        dialogue.sentences[0] = "Look, it's ok to admit you're bad.";
-                        dialogue.sentences[1] = "If you're stuck, press R to reset the level.";
-                        dialogue.sentences[2] = "Your parents did say you would fail";
-
-                        TriggerDialogue();
-                        hasbeenCalledOnCurrentLevel = true;
-                    }
+                    TriggerDialogue();
+                    hasbeenCalledOnCurrentLevel = true;
                 }
             }
+
         }
+
     }
 
 

@@ -11475,7 +11475,7 @@ Prefab:
     - target: {fileID: 224416001658526234, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -67.5
+      value: -94.8
       objectReference: {fileID: 0}
     - target: {fileID: 224416001658526234, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
         type: 2}
@@ -11525,7 +11525,7 @@ Prefab:
     - target: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
         type: 2}
       propertyPath: m_Text
-      value: 'LEVEL: 12'
+      value: 'LEVEL: 18'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56, type: 2}
@@ -11990,12 +11990,12 @@ Prefab:
     - target: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 98
+      value: 123.6
       objectReference: {fileID: 0}
     - target: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 37.100006
+      value: 35.9
       objectReference: {fileID: 0}
     - target: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
         type: 2}
@@ -13218,7 +13218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1994860045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13232,13 +13232,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: N/A
-    sentences: []
+    sentences:
+    - 
+    - 
+    - 
   stairsToNextLevel: {fileID: 0}
   fakeStairs: {fileID: 0}
   grate: {fileID: 0}
   fakeGrate: {fileID: 0}
-  sceneName: Level12
+  sceneName: Level18
   timer: 0
+  spinningTimer: 0
 --- !u!4 &1994860046
 Transform:
   m_ObjectHideFlags: 0

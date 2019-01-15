@@ -11845,7 +11845,7 @@ Prefab:
     - target: {fileID: 224416001658526234, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -67.5
+      value: -94.8
       objectReference: {fileID: 0}
     - target: {fileID: 224416001658526234, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
         type: 2}
@@ -11891,11 +11891,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
-        type: 2}
-      propertyPath: m_Text
-      value: 'LEVEL: 6'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56, type: 2}
@@ -12402,12 +12397,12 @@ Prefab:
     - target: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 98
+      value: 123.6
       objectReference: {fileID: 0}
     - target: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 37.100006
+      value: 35.9
       objectReference: {fileID: 0}
     - target: {fileID: 224453992789279346, guid: bca141618c7545a4991f0ef07c3533d6,
         type: 2}
@@ -12458,36 +12453,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148074805154354, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148074805154354, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148074805154354, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114100615142958842, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114100615142958842, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114100615142958842, guid: bca141618c7545a4991f0ef07c3533d6,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bca141618c7545a4991f0ef07c3533d6, type: 2}
@@ -13762,6 +13727,7 @@ MonoBehaviour:
   fakeGrate: {fileID: 0}
   sceneName: Level6
   timer: 0
+  spinningTimer: 0
 --- !u!4 &1994860046
 Transform:
   m_ObjectHideFlags: 0

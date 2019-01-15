@@ -15,7 +15,10 @@ public class DialogueTrigger : MonoBehaviour {
     string currentDialogue;
 
     public float timer = 0f;
+    public float spinningTimer = 0f;
 
+    // isSpinningTriggers;
+    bool hasbeenCalledOnCurrentLevel = false;
 
     // General Triggers;
     bool hasInitialDialogueBeenCalled = false;
@@ -100,8 +103,10 @@ public class DialogueTrigger : MonoBehaviour {
     void Update()
     {
         DialogueSequence();
+        IsSpinningPrompt();
     
         timer += Time.fixedDeltaTime;
+        spinningTimer += Time.fixedDeltaTime;
     }
 
 
@@ -181,6 +186,34 @@ public class DialogueTrigger : MonoBehaviour {
         if (sceneName == "Level16")
         {
             Level16();
+        }
+    }
+
+    // Prompts the player to press R if they've been spinning for ages.
+    public void IsSpinningPrompt()
+    {
+        while (PlayerMovement.isSpinning == true)
+        {
+            if (hasbeenCalledOnCurrentLevel == false)
+            {
+                if (sceneName == "Level6" || sceneName == "Level7" || sceneName == "Level9" ||
+                    sceneName == "Level10" || sceneName == "Level11" || sceneName == "Level12" ||
+                    sceneName == "Level14" || sceneName == "Level15" || sceneName == "Level16" || sceneName == "Level17" ||
+                    sceneName == "Level18" || sceneName == "Level19"|| sceneName == "Level10")
+                {
+                    spinningTimer = 0f;
+
+                    if (spinningTimer > 5f)
+                    {
+                        dialogue.sentences[0] = "Look, it's ok to admit you're bad.";
+                        dialogue.sentences[1] = "If you're stuck, press R to reset the level.";
+                        dialogue.sentences[2] = "Your parents did say you would fail";
+
+                        TriggerDialogue();
+                        hasbeenCalledOnCurrentLevel = true;
+                    }
+                }
+            }
         }
     }
 

@@ -151,6 +151,7 @@ MonoBehaviour:
   fakeGrate: {fileID: 0}
   sceneName: Level1
   timer: 0
+  spinningTimer: 0
 --- !u!4 &145856690
 Transform:
   m_ObjectHideFlags: 0
@@ -7263,6 +7264,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114485406238111006, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56,
+        type: 2}
+      propertyPath: m_Text
+      value: 'LEVEL: 1'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdedf0bfe2d3ebc4799f0dfdf3393c56, type: 2}

@@ -13349,14 +13349,16 @@ MonoBehaviour:
   dialogue:
     name: N/A
     sentences:
-    - Just go to the next level.
-    - That's it, there's no need for puzzles.
+    - 
+    - 
+    - 
   stairsToNextLevel: {fileID: 0}
   fakeStairs: {fileID: 0}
   grate: {fileID: 0}
   fakeGrate: {fileID: 0}
-  sceneName: Level12
+  sceneName: Level14
   timer: 0
+  spinningTimer: 0
 --- !u!4 &1994860046
 Transform:
   m_ObjectHideFlags: 0

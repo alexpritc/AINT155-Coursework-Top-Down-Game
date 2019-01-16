@@ -11,7 +11,7 @@ BSc(Hons) Computing and Games Development
 
 # Module
 
-AINT152 Games Workshop
+AINT155 Games Workshop
 
 # Assignment title
 
